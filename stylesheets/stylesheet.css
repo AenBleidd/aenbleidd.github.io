@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #151515 url("../images/bkg.png") 0 0;
+  background: #ffffff; /* Set white background for light theme */
   color: #eaeaea;
   font: 16px;
   line-height: 1.5;
@@ -58,8 +58,7 @@ header h1 {
 }
 
 header h1:before {
-  content: "./ ";
-  font-size: 24px;
+  content: "";
 }
 
 header h2 {
@@ -244,4 +243,23 @@ a {
 
 .cf {
   zoom:1;
+}
+
+/* Footer, <footer>
+   footer   - container
+   p        - copyright text
+*/
+
+footer {
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border-top: 1px dashed #b5e853;
+  padding: 20px 0;
+  margin: 40px 0 0 0;
+  text-align: center;
+}
+
+footer p {
+  font-size: 14px;
+  color: #666;
 }
