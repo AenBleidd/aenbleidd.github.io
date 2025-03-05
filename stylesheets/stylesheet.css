@@ -77,7 +77,8 @@ header h2 {
 */
 
 #main_content {
-  width: 100%;
+  width: 75%;
+  float: left;
   -webkit-font-smoothing: antialiased;
 }
 section img {
@@ -262,4 +263,30 @@ footer {
 footer p {
   font-size: 14px;
   color: #666;
+}
+
+/* Menu, <aside>
+   menu   - container
+   ul     - menu items
+*/
+
+#menu {
+  float: left;
+  width: 20%;
+  margin-right: 5%;
+}
+
+#menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+#menu ul li {
+  margin-bottom: 10px;
+  padding-left: 0; /* Ensure no padding for alignment */
+}
+
+#menu ul li ul {
+  margin-left: 20px;
+  padding-left: 0; /* Ensure no padding for alignment */
 }
