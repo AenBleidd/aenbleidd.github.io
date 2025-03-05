@@ -1,6 +1,7 @@
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
 const markdownFiles = [
+  { file: 'blog/2024.04.01.md', title: 'BOINC Release 8.0.0 and liblzma vulnerability' },
   { file: 'blog/2024.03.18.md', title: 'Major BOINC version change' },
   { file: 'blog/2024.03.16.md', title: 'Android BOINC: where are my GPUs?' },
   { file: 'blog/2024.02.28.md', title: 'Vanilla BOINC packages: the reason and the purpose' },
