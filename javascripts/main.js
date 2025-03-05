@@ -8,12 +8,6 @@ const markdownFiles = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-  const footer = document.createElement('footer');
-  const p = document.createElement('p');
-  p.textContent = '© 2025 Vitalii Koshura';
-  footer.appendChild(p);
-  document.body.appendChild(footer);
-
   const blogContent = document.getElementById('blog_content');
   const blogItems = document.getElementById('blog_items');
   const blogToggle = document.getElementById('blog_toggle');
