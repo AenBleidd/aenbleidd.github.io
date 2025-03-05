@@ -310,3 +310,9 @@ footer p {
 #blog_content {
   text-align: justify; /* Align text by width */
 }
+
+#blog_content section {
+  border-bottom: 1px dashed #b5e853; /* Add dashed line separator */
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
