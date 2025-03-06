@@ -347,3 +347,49 @@ footer p {
 #right_block ul li {
   margin-bottom: 10px;
 }
+
+#photo-container {
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 175px;
+}
+#instagram-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+#instagram-link img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+#more-instagram {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+#random-photo {
+  max-width: 150px;
+}
+
+.boinc-button {
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+  padding: 5px 0px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.boinc-button img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
