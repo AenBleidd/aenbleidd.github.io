@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /javascripts/
+Disallow: /stylesheets/
+Allow: /
+
+Sitemap: https://aenbleidd.github.io/sitemap.xml
