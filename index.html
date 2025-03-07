@@ -50,35 +50,13 @@
       <aside id="right_block" style="margin-left: 100px;">
         <div id="random_photo">
           <h3>Random photo</h3>
-
-        <div id="photo-container">
+          <div id="photo-container">
             <img id="random-photo" src="" alt="Random Photo" />
             <div id="instagram-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Instagram Logo" />
-                <a id="more-instagram" target="_blank" href="https://www.instagram.com/aenbleidd/">More on Instagram</a>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Instagram Logo" />
+              <a id="more-instagram" target="_blank" href="https://www.instagram.com/aenbleidd/">More on Instagram</a>
             </div>
-        </div>
-
-        <script>
-            // List of example photo URLs
-            const photoList = [
-                'https://live.staticflickr.com/65535/54090603617_4bfcc69a65_m.jpg',
-                'https://live.staticflickr.com/65535/54091726473_8febd36f74_m.jpg',
-                'https://live.staticflickr.com/65535/54090627397_b258a5e165_m.jpg'
-                // Add more photo URLs here
-            ];
-
-            // Function to display a random photo
-            function displayRandomPhoto() {
-                const randomIndex = Math.floor(Math.random() * photoList.length);
-                const randomPhotoUrl = photoList[randomIndex];
-                const photoElement = document.getElementById('random-photo');
-                photoElement.src = randomPhotoUrl;
-            }
-
-            // Display a random photo initially
-            displayRandomPhoto();
-        </script>
+          </div>
         </div>
         <div id="useful_links" style="margin-top: 50px;">
           <h3>Useful links</h3>

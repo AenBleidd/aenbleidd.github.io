@@ -27,6 +27,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // List of example photo URLs
+  const photoList = [
+    'https://live.staticflickr.com/65535/54090603617_4bfcc69a65_m.jpg',
+    'https://live.staticflickr.com/65535/54091726473_8febd36f74_m.jpg',
+    'https://live.staticflickr.com/65535/54090627397_b258a5e165_m.jpg'
+    // Add more photo URLs here
+  ];
+
+  // Function to display a random photo
+  const randomIndex = Math.floor(Math.random() * photoList.length);
+  const randomPhotoUrl = photoList[randomIndex];
+  const photoElement = document.getElementById('random-photo');
+  photoElement.src = randomPhotoUrl;
 
   markdownFiles.forEach(({ file, title }) => {
     // Add menu item
