@@ -44,7 +44,7 @@
         </ul>
       </aside>
       <section id="main_content">
-        <div id="blog_content"></div>
+        <div id="blog_post_single"></div>
       </section>
     </div>
 
@@ -71,7 +71,7 @@
         fetch('2025.02.02.md')
           .then(response => response.text())
           .then(text => {
-            const blogContent = document.getElementById('blog_content');
+            const blogContent = document.getElementById('blog_post_single');
             blogContent.innerHTML = marked.parse(text);
           })
           .catch(error => console.error('Error fetching the markdown file:', error));
