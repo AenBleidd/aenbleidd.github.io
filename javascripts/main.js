@@ -41,26 +41,28 @@ document.addEventListener('DOMContentLoaded', function() {
   const photoElement = document.getElementById('random-photo');
   photoElement.src = randomPhotoUrl;
 
-  markdownFiles.forEach(({ file, title }) => {
-    // Add menu item
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    const htmlFile = file.replace('.md', '.html');
-    a.href = `${htmlFile}`;
-    a.textContent = title;
-    li.appendChild(a);
-    blogItems.appendChild(li);
+  if (blogContent) {
+    markdownFiles.forEach(({ file, title }) => {
+      // Add menu item
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      const htmlFile = file.replace('.md', '.html');
+      a.href = `${htmlFile}`;
+      a.textContent = title;
+      li.appendChild(a);
+      blogItems.appendChild(li);
 
-    // Fetch and render markdown content
-    fetch(file)
-      .then(response => response.text())
-      .then(text => {
-        const markdownContent = marked.parse(text);
-        const section = document.createElement('section');
-        section.id = file;
-        section.innerHTML = markdownContent;
-        blogContent.appendChild(section);
-      })
-      .catch(error => console.error('Error fetching the markdown file:', error));
-  });
+      // Fetch and render markdown content
+      fetch(file)
+        .then(response => response.text())
+        .then(text => {
+          const markdownContent = marked.parse(text);
+          const section = document.createElement('section');
+          section.id = file;
+          section.innerHTML = markdownContent;
+          blogContent.appendChild(section);
+        })
+        .catch(error => console.error('Error fetching the markdown file:', error));
+    });
+  }
 });
