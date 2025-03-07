@@ -3,11 +3,19 @@
   <title>Vitalii Koshura: Maintaining BOINC</title>
   <link href="https://aenbleidd.github.io/rss.xml" rel="self"/>
   <link href="https://aenbleidd.github.io/"/>
-  <updated>2025-01-01T00:00:00Z</updated>
+  <updated>2025-02-02T00:00:00Z</updated>
   <author>
     <name>Vitalii Koshura</name>
   </author>
   <id>https://aenbleidd.github.io/</id>
+
+  <entry>
+    <title>BOINC Development Status Report: February 2025</title>
+    <link href="https://aenbleidd.github.io/2025.02.02.html"/>
+    <id>https://aenbleidd.github.io/2025.02.02.html</id>
+    <updated>2025-02-02T00:00:00Z</updated>
+    <summary>Read the monthly report for January 2025 to find more information about the latest updates in BOINC development.</summary>
+  </entry>
 
   <entry>
     <title>BOINC Development Status Report: January 2025</title>
