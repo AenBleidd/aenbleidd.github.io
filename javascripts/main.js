@@ -1,5 +1,3 @@
-import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
-
 const markdownFiles = [
   { file: '2025.02.02.md', title: 'BOINC Development Status Report: January 2025' },
   { file: '2025.01.01.md', title: 'BOINC Development Status Report: December 2024' },
@@ -14,7 +12,6 @@ const markdownFiles = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-  const blogContent = document.getElementById('blog_content');
   const blogItems = document.getElementById('blog_items');
   const blogToggle = document.getElementById('blog_toggle');
 
@@ -41,28 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const photoElement = document.getElementById('random-photo');
   photoElement.src = randomPhotoUrl;
 
-  if (blogContent) {
-    markdownFiles.forEach(({ file, title }) => {
-      // Add menu item
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      const htmlFile = file.replace('.md', '.html');
-      a.href = `${htmlFile}`;
-      a.textContent = title;
-      li.appendChild(a);
-      blogItems.appendChild(li);
-
-      // Fetch and render markdown content
-      fetch(file)
-        .then(response => response.text())
-        .then(text => {
-          const markdownContent = marked.parse(text);
-          const section = document.createElement('section');
-          section.id = file;
-          section.innerHTML = markdownContent;
-          blogContent.appendChild(section);
-        })
-        .catch(error => console.error('Error fetching the markdown file:', error));
-    });
-  }
+  markdownFiles.forEach(({ file, title }) => {
+    // Add menu item
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    const htmlFile = file.replace('.md', '.html');
+    a.href = `${htmlFile}`;
+    a.textContent = title;
+    li.appendChild(a);
+    blogItems.appendChild(li);
+  });
 });

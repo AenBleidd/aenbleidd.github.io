@@ -46,6 +46,9 @@
       </aside>
       <section id="main_content">
         <div id="blog_content"></div>
+        <div id="previous_post_link">
+          <a href="2025.01.01.html">Previous Post: BOINC Development Status Report: December 2024</a>
+        </div>
       </section>
       <aside id="right_block" style="margin-left: 100px;">
         <div id="random_photo">
@@ -131,5 +134,17 @@
       } catch(err) {}
     </script>
     <script src="javascripts/main.js" type="module"></script>
+    <script type="module">
+      import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+      document.addEventListener('DOMContentLoaded', function() {
+        fetch('2025.02.02.md')
+          .then(response => response.text())
+          .then(text => {
+            const blogContent = document.getElementById('blog_content');
+            blogContent.innerHTML = marked.parse(text);
+          })
+          .catch(error => console.error('Error fetching the markdown file:', error));
+      });
+    </script>
   </body>
 </html>
