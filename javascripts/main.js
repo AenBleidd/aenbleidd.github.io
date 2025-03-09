@@ -20,8 +20,21 @@ const photoList = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-  const blogItems = document.getElementById('blog_items');
-  const blogToggle = document.getElementById('blog_toggle');
+  const menuItems = document.getElementById('menu_items');
+  const li = document.createElement('li');
+  const aHome = document.createElement('a');
+  aHome.href = 'index.html';
+  aHome.textContent = 'Home';
+  li.appendChild(aHome);
+  menuItems.appendChild(li);
+  const blogLi = document.createElement('li');
+  const blogToggle = document.createElement('a');
+  blogToggle.id = 'blog_toggle';
+  blogToggle.href = '#';
+  blogToggle.textContent = 'Blog';
+  const blogItems = document.createElement('ul');
+  blogItems.id = 'blog_items';
+  blogItems.style.display = 'none';
 
   blogToggle.addEventListener('click', function(event) {
     event.preventDefault();
@@ -31,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
       blogItems.style.display = 'none';
     }
   });
+  blogLi.appendChild(blogToggle);
+  blogLi.appendChild(blogItems);
+  menuItems.appendChild(blogLi);
 
   const randomPhotoContainer = document.getElementById('random_photo');
   const h3 = document.createElement('h3');
