@@ -11,6 +11,14 @@ const markdownFiles = [
   { file: '2023.10.14.md', title: 'Introduction' }
 ];
 
+// List of example photo URLs
+const photoList = [
+  'https://live.staticflickr.com/65535/54090603617_4bfcc69a65_m.jpg',
+  'https://live.staticflickr.com/65535/54091726473_8febd36f74_m.jpg',
+  'https://live.staticflickr.com/65535/54090627397_b258a5e165_m.jpg'
+  // Add more photo URLs here
+];
+
 document.addEventListener('DOMContentLoaded', function() {
   const blogItems = document.getElementById('blog_items');
   const blogToggle = document.getElementById('blog_toggle');
@@ -24,18 +32,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // List of example photo URLs
-  const photoList = [
-    'https://live.staticflickr.com/65535/54090603617_4bfcc69a65_m.jpg',
-    'https://live.staticflickr.com/65535/54091726473_8febd36f74_m.jpg',
-    'https://live.staticflickr.com/65535/54090627397_b258a5e165_m.jpg'
-    // Add more photo URLs here
-  ];
-
-  // Function to display a random photo
+  const randomPhotoContainer = document.getElementById('random_photo');
+  const h3 = document.createElement('h3');
+  h3.textContent = 'Random photo';
+  randomPhotoContainer.appendChild(h3);
+  const photoContainer = document.createElement('div');
+  photoContainer.id = 'photo-container';
+  randomPhotoContainer.appendChild(photoContainer);
+  const photoElement = document.createElement('img');
+  photoElement.id = 'random-photo';
+  photoElement.src = '';
+  photoElement.alt = 'Random Photo';
+  photoContainer.appendChild(photoElement);
+  const instagramLink = document.createElement('div');
+  instagramLink.id = 'instagram-link';
+  const instagramLogo = document.createElement('img');
+  instagramLogo.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png';
+  instagramLogo.alt = 'Instagram Logo';
+  instagramLink.appendChild(instagramLogo);
+  const moreInstagramLink = document.createElement('a');
+  moreInstagramLink.id = 'more-instagram';
+  moreInstagramLink.target = '_blank';
+  moreInstagramLink.href = 'https://www.instagram.com/aenbleidd/';
+  moreInstagramLink.textContent = 'More on Instagram';
+  instagramLink.appendChild(moreInstagramLink);
+  photoContainer.appendChild(instagramLink);
+  randomPhotoContainer.appendChild(photoContainer);
   const randomIndex = Math.floor(Math.random() * photoList.length);
   const randomPhotoUrl = photoList[randomIndex];
-  const photoElement = document.getElementById('random-photo');
   photoElement.src = randomPhotoUrl;
 
   markdownFiles.forEach(({ file, title }) => {
