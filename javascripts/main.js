@@ -219,23 +219,23 @@ document.addEventListener('DOMContentLoaded', function() {
   blueskyButton.appendChild(document.createTextNode('BlueSky'));
   followMeContainer.appendChild(blueskyButton);
 
-  // <h3>Follow Me</h3>
-  // <a href="https://twitter.com/AenVampire" target="_blank" rel="noopener noreferrer" class="boinc-button">
-  //   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/100px-X_logo_2023.svg.png" alt="X Logo" width="30" height="30" />
-  //   X/Twitter
-  // </a>
-  // <a rel="me" href="https://fosstodon.org/@AenBleidd" target="_blank" rel="noopener noreferrer" class="boinc-button">
-  //   <img src="https://joinmastodon.org/logos/logo-purple.svg" alt="Mastodon Logo" width="30" height="30" />
-  //   Mastodon
-  // </a>
-  // <a href="https://www.threads.net/@aenbleidd" target="_blank" rel="noopener noreferrer" class="boinc-button">
-  //   <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Threads_%28app%29_logo.svg" alt="Threads Logo" width="30" height="30" />
-  //   Threads
-  // </a>
-  // <a href="https://bsky.app/profile/aenbleidd.bsky.social" target="_blank" rel="noopener noreferrer" class="boinc-button">
-  //   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/1024px-Bluesky_Logo.svg.png" alt="Threads Logo" width="30" height="30" />
-  //   BlueSky
-  // </a>
+  const SubscribeSection = document.getElementById('subscribe');
+  const h3Subscribe = document.createElement('h3');
+  h3Subscribe.textContent = 'Subscribe';
+  SubscribeSection.appendChild(h3Subscribe);
+  const subscribeButton = document.createElement('a');
+  subscribeButton.href = 'rss.xml';
+  subscribeButton.target = '_blank';
+  subscribeButton.rel = 'noopener noreferrer';
+  subscribeButton.className = 'boinc-button';
+  const subscribeLogo = document.createElement('img');
+  subscribeLogo.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Feed-icon.svg/1280px-Feed-icon.svg.png';
+  subscribeLogo.alt = 'RSS Feed Icon';
+  subscribeLogo.width = 30;
+  subscribeLogo.height = 30;
+  subscribeButton.appendChild(subscribeLogo);
+  subscribeButton.appendChild(document.createTextNode('Subscribe'));
+  SubscribeSection.appendChild(subscribeButton);
 
   markdownFiles.forEach(({ file, title }) => {
     // Add menu item
