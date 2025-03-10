@@ -397,3 +397,17 @@ footer p {
   vertical-align: middle;
   margin-right: 10px;
 }
+
+#follow_me {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column; /* Ensure elements are in one column */
+  align-items: flex-start; /* Align items to the start of the column */
+}
+
+#useful_links {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column; /* Ensure elements are in one column */
+  align-items: flex-start; /* Align items to the start of the column */
+}

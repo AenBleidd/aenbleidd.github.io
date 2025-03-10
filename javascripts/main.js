@@ -162,6 +162,81 @@ document.addEventListener('DOMContentLoaded', function() {
   usefulLinksContainer.appendChild(donationButton);
   // Add more useful links here
 
+  const followMeContainer = document.getElementById('follow_me');
+  const h3FollowMe = document.createElement('h3');
+  h3FollowMe.textContent = 'Follow me';
+  followMeContainer.appendChild(h3FollowMe);
+  const xButton = document.createElement('a');
+  xButton.href = 'https://twitter.com/AenVampire';
+  xButton.target = '_blank';
+  xButton.rel = 'noopener noreferrer';
+  xButton.className = 'boinc-button';
+  const xLogo = document.createElement('img');
+  xLogo.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/100px-X_logo_2023.svg.png';
+  xLogo.alt = 'X Logo';
+  xLogo.width = 30;
+  xLogo.height = 30;
+  xButton.appendChild(xLogo);
+  xButton.appendChild(document.createTextNode('X/Twitter'));
+  followMeContainer.appendChild(xButton);
+  const mastodonButton = document.createElement('a');
+  mastodonButton.href = 'https://fosstodon.org/@AenBleidd';
+  mastodonButton.target = '_blank';
+  mastodonButton.rel = 'me noopener noreferrer';
+  mastodonButton.className = 'boinc-button';
+  const mastodonLogo = document.createElement('img');
+  mastodonLogo.src = 'https://joinmastodon.org/logos/logo-purple.svg';
+  mastodonLogo.alt = 'Mastodon Logo';
+  mastodonLogo.width = 30;
+  mastodonLogo.height = 30;
+  mastodonButton.appendChild(mastodonLogo);
+  mastodonButton.appendChild(document.createTextNode('Mastodon'));
+  followMeContainer.appendChild(mastodonButton);
+  const threadsButton = document.createElement('a');
+  threadsButton.href = 'https://www.threads.net/@aenbleidd';
+  threadsButton.target = '_blank';
+  threadsButton.rel = 'noopener noreferrer';
+  threadsButton.className = 'boinc-button';
+  const threadsLogo = document.createElement('img');
+  threadsLogo.src = 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Threads_%28app%29_logo.svg';
+  threadsLogo.alt = 'Threads Logo';
+  threadsLogo.width = 30;
+  threadsLogo.height = 30;
+  threadsButton.appendChild(threadsLogo);
+  threadsButton.appendChild(document.createTextNode('Threads'));
+  followMeContainer.appendChild(threadsButton);
+  const blueskyButton = document.createElement('a');
+  blueskyButton.href = 'https://bsky.app/profile/aenbleidd.bsky.social';
+  blueskyButton.target = '_blank';
+  blueskyButton.rel = 'noopener noreferrer';
+  blueskyButton.className = 'boinc-button';
+  const blueskyLogo = document.createElement('img');
+  blueskyLogo.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/1024px-Bluesky_Logo.svg.png';
+  blueskyLogo.alt = 'BlueSky Logo';
+  blueskyLogo.width = 30;
+  blueskyLogo.height = 30;
+  blueskyButton.appendChild(blueskyLogo);
+  blueskyButton.appendChild(document.createTextNode('BlueSky'));
+  followMeContainer.appendChild(blueskyButton);
+
+  // <h3>Follow Me</h3>
+  // <a href="https://twitter.com/AenVampire" target="_blank" rel="noopener noreferrer" class="boinc-button">
+  //   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/100px-X_logo_2023.svg.png" alt="X Logo" width="30" height="30" />
+  //   X/Twitter
+  // </a>
+  // <a rel="me" href="https://fosstodon.org/@AenBleidd" target="_blank" rel="noopener noreferrer" class="boinc-button">
+  //   <img src="https://joinmastodon.org/logos/logo-purple.svg" alt="Mastodon Logo" width="30" height="30" />
+  //   Mastodon
+  // </a>
+  // <a href="https://www.threads.net/@aenbleidd" target="_blank" rel="noopener noreferrer" class="boinc-button">
+  //   <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Threads_%28app%29_logo.svg" alt="Threads Logo" width="30" height="30" />
+  //   Threads
+  // </a>
+  // <a href="https://bsky.app/profile/aenbleidd.bsky.social" target="_blank" rel="noopener noreferrer" class="boinc-button">
+  //   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/1024px-Bluesky_Logo.svg.png" alt="Threads Logo" width="30" height="30" />
+  //   BlueSky
+  // </a>
+
   markdownFiles.forEach(({ file, title }) => {
     // Add menu item
     const li = document.createElement('li');
