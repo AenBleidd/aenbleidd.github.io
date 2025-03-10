@@ -48,7 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
   blogLi.appendChild(blogItems);
   menuItems.appendChild(blogLi);
 
-  const randomPhotoContainer = document.getElementById('random_photo');
+  const rightBlock = document.getElementById('right_block');
+
+  const randomPhotoContainer = document.createElement('div');
+  randomPhotoContainer.id = 'random_photo';
   const h3 = document.createElement('h3');
   h3.textContent = 'Random photo';
   randomPhotoContainer.appendChild(h3);
@@ -77,8 +80,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const randomIndex = Math.floor(Math.random() * photoList.length);
   const randomPhotoUrl = photoList[randomIndex];
   photoElement.src = randomPhotoUrl;
+  rightBlock.appendChild(randomPhotoContainer);
 
-  const usefulLinksContainer = document.getElementById('useful_links');
+  const usefulLinksContainer = document.createElement('div');
+  usefulLinksContainer.id = 'useful_links';
+  usefulLinksContainer.style.marginTop = '50px';
   const h3UsefulLinks = document.createElement('h3');
   h3UsefulLinks.textContent = 'Useful links';
   usefulLinksContainer.appendChild(h3UsefulLinks);
@@ -161,8 +167,11 @@ document.addEventListener('DOMContentLoaded', function() {
   donationButton.appendChild(document.createTextNode('Make donation'));
   usefulLinksContainer.appendChild(donationButton);
   // Add more useful links here
+  rightBlock.appendChild(usefulLinksContainer);
 
-  const followMeContainer = document.getElementById('follow_me');
+  const followMeContainer = document.createElement('div');
+  followMeContainer.id = 'follow_me';
+  followMeContainer.style.marginTop = '50px';
   const h3FollowMe = document.createElement('h3');
   h3FollowMe.textContent = 'Follow me';
   followMeContainer.appendChild(h3FollowMe);
@@ -218,8 +227,11 @@ document.addEventListener('DOMContentLoaded', function() {
   blueskyButton.appendChild(blueskyLogo);
   blueskyButton.appendChild(document.createTextNode('BlueSky'));
   followMeContainer.appendChild(blueskyButton);
+  rightBlock.appendChild(followMeContainer);
 
-  const SubscribeSection = document.getElementById('subscribe');
+  const SubscribeSection = document.createElement('div');
+  SubscribeSection.id = 'subscribe';
+  SubscribeSection.style.marginTop = '50px';
   const h3Subscribe = document.createElement('h3');
   h3Subscribe.textContent = 'Subscribe';
   SubscribeSection.appendChild(h3Subscribe);
@@ -236,6 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
   subscribeButton.appendChild(subscribeLogo);
   subscribeButton.appendChild(document.createTextNode('Subscribe'));
   SubscribeSection.appendChild(subscribeButton);
+  rightBlock.appendChild(SubscribeSection);
 
   markdownFiles.forEach(({ file, title }) => {
     // Add menu item
