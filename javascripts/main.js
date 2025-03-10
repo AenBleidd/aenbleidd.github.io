@@ -20,6 +20,24 @@ const photoList = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
+  const header = document.createElement('header');
+  const headerContainer = document.createElement('div');
+  headerContainer.className = 'container';
+  const headerTitle = document.createElement('h1');
+  headerTitle.textContent = 'Vitalii Koshura: Maintaining BOINC';
+  headerContainer.appendChild(headerTitle);
+  header.appendChild(headerContainer);
+  document.body.insertBefore(header, document.body.firstChild);
+
+  const footer = document.createElement('footer');
+  const footerContainer = document.createElement('div');
+  footerContainer.className = 'container';
+  const footerText = document.createElement('p');
+  footerText.textContent = 'Vitalii Koshura © 2025';
+  footerContainer.appendChild(footerText);
+  footer.appendChild(footerContainer);
+  document.body.appendChild(footer);
+
   const menuItems = document.getElementById('menu_items');
   const li = document.createElement('li');
   const aHome = document.createElement('a');
