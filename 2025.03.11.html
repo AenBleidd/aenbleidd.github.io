@@ -2,16 +2,15 @@
 <html lang="en">
   <head>
     <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="MmPhvHx63B0OXINupX0JkoocA4vFy-mE61CxlzHe0SY" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Updates and extended information about BOINC development by Vitalii Koshura">
-    <meta name="keywords" content="BOINC, development, Vitalii Koshura, updates, information">
-    <meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">
-    <link rel="canonical" href="https://aenbleidd.github.io/">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Read the monthly report for January 2025 to find more information about the future release plans.">
+    <meta name="keywords" content="BOINC, development, Vitalii Koshura, updates, information, January 2025, release plans">
+    <meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">
+    <link rel="canonical" href="https://aenbleidd.github.io/2025.02.02.html">
 
     <title>Vitalii Koshura: Maintaining BOINC</title>
   </head>
@@ -33,7 +32,7 @@
         <ul id="menu_items"></ul>
       </aside>
       <section id="main_content">
-        <div id="blog_content"></div>
+        <div id="blog_post_single"></div>
         <div id="previous_post_link">
           <a href="2025.02.02.html">Previous Post: BOINC Development Status Report: January 2025</a>
         </div>
@@ -51,14 +50,14 @@
         pageTracker._trackPageview();
       } catch(err) {}
     </script>
-    <script src="javascripts/main.js" type="module"></script>
+    <script src="../javascripts/main.js" type="module"></script>
     <script type="module">
       import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
       document.addEventListener('DOMContentLoaded', function() {
         fetch('2025.03.11.md')
           .then(response => response.text())
           .then(text => {
-            const blogContent = document.getElementById('blog_content');
+            const blogContent = document.getElementById('blog_post_single');
             blogContent.innerHTML = marked.parse(text);
           })
           .catch(error => console.error('Error fetching the markdown file:', error));

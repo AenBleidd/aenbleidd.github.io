@@ -1,4 +1,5 @@
 const markdownFiles = [
+  { file: '2025.03.11.md', title: 'BOINC Development Status Report: February 2025' },
   { file: '2025.02.02.md', title: 'BOINC Development Status Report: January 2025' },
   { file: '2025.01.01.md', title: 'BOINC Development Status Report: December 2024' },
   { file: '2024.12.01.md', title: 'BOINC Development Status Report: November 2024' },
