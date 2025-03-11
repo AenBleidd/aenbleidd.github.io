@@ -98,8 +98,7 @@ header h2 {
   }
 
   #right_block {
-    width: 100%;
-    margin-left: 0;
+    display: none; /* Hide right block on small screens */
   }
 }
 
