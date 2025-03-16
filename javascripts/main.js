@@ -1,15 +1,15 @@
-const markdownFiles = [
-  { file: '2025.03.11.md', title: 'BOINC Development Status Report: February 2025' },
-  { file: '2025.02.02.md', title: 'BOINC Development Status Report: January 2025' },
-  { file: '2025.01.01.md', title: 'BOINC Development Status Report: December 2024' },
-  { file: '2024.12.01.md', title: 'BOINC Development Status Report: November 2024' },
-  { file: '2024.11.02.md', title: 'BOINC Development Status Report: October 2024' },
-  { file: '2024.10.13.md', title: 'BOINC Workshop 2024: What\'s next?' },
-  { file: '2024.04.01.md', title: 'BOINC Release 8.0.0 and liblzma vulnerability' },
-  { file: '2024.03.18.md', title: 'Major BOINC version change' },
-  { file: '2024.03.16.md', title: 'Android BOINC: where are my GPUs?' },
-  { file: '2024.02.28.md', title: 'Vanilla BOINC packages: the reason and the purpose' },
-  { file: '2023.10.14.md', title: 'Introduction' }
+const blogFiles = [
+  { file: '2025.03.11.html', title: 'BOINC Development Status Report: February 2025' },
+  { file: '2025.02.02.html', title: 'BOINC Development Status Report: January 2025' },
+  { file: '2025.01.01.html', title: 'BOINC Development Status Report: December 2024' },
+  { file: '2024.12.01.html', title: 'BOINC Development Status Report: November 2024' },
+  { file: '2024.11.02.html', title: 'BOINC Development Status Report: October 2024' },
+  { file: '2024.10.13.html', title: 'BOINC Workshop 2024: What\'s next?' },
+  { file: '2024.04.01.html', title: 'BOINC Release 8.0.0 and liblzma vulnerability' },
+  { file: '2024.03.18.html', title: 'Major BOINC version change' },
+  { file: '2024.03.16.html', title: 'Android BOINC: where are my GPUs?' },
+  { file: '2024.02.28.html', title: 'Vanilla BOINC packages: the reason and the purpose' },
+  { file: '2023.10.14.html', title: 'Introduction' }
 ];
 
 // List of example photo URLs
@@ -21,24 +21,6 @@ const photoList = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-  const header = document.createElement('header');
-  const headerContainer = document.createElement('div');
-  headerContainer.className = 'container';
-  const headerTitle = document.createElement('h1');
-  headerTitle.textContent = 'Vitalii Koshura: Maintaining BOINC';
-  headerContainer.appendChild(headerTitle);
-  header.appendChild(headerContainer);
-  document.body.insertBefore(header, document.body.firstChild);
-
-  const footer = document.createElement('footer');
-  const footerContainer = document.createElement('div');
-  footerContainer.className = 'container';
-  const footerText = document.createElement('p');
-  footerText.textContent = 'Vitalii Koshura © 2025';
-  footerContainer.appendChild(footerText);
-  footer.appendChild(footerContainer);
-  document.body.appendChild(footer);
-
   const menuItems = document.getElementById('menu_items');
   const li = document.createElement('li');
   const aHome = document.createElement('a');
@@ -269,12 +251,11 @@ document.addEventListener('DOMContentLoaded', function() {
   SubscribeSection.appendChild(subscribeButton);
   rightBlock.appendChild(SubscribeSection);
 
-  markdownFiles.forEach(({ file, title }) => {
+  blogFiles.forEach(({ file, title }) => {
     // Add menu item
     const li = document.createElement('li');
     const a = document.createElement('a');
-    const htmlFile = file.replace('.md', '.html');
-    a.href = `${htmlFile}`;
+    a.href = `${file}`;
     a.textContent = title;
     li.appendChild(a);
     blogItems.appendChild(li);

@@ -1,67 +1,51 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">
+<meta name="description" content="Read the monthly report for December 2024 to find more information about the 2024 year recap."><meta name="keywords" content="BOINC, development, Vitalii Koshura, updates, information, 2024 recap"><link rel="canonical" href="https://aenbleidd.github.io/2025.01.01.html"><title>BOINC Development Status Report: December 2024</title>
+<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-RB9QYE55Z3');</script>
+<body>
+<header><div class="container"><h1>Vitalii Koshura: Maintaining BOINC</h1></div></header>
+<div class="container"><aside id="menu"><ul id="menu_items"></ul></aside><section id="main_content"><div id="blog_post_single">
+<h1>BOINC Development Status Report: December 2024</h1>
+<p>As the year draws to a close, it's time to reflect on 2024 and review its highlights and challenges.</p>
+<p>Last year, I found myself in Vienna, Austria, contemplating 2023. At the time, this blog contained only an <a href="2023.10.14.html">Introductory</a> post and I had no concrete plans to update it regularly. Instead of writing a full blog post to share the BOINC contribution statistics, I opted for a simple update on <a href="https://x.com/AenVampire/status/1741402297635139775">X (formerly Twitter)</a>, <a href="https://fosstodon.org/@AenBleidd/111674500139386818">Mastodon</a>, and <a href="https://www.threads.net/@aenbleidd/post/C1g4EmdIZ_9?xmt=AQGzilvFHzRS1KoefT5ZYwSxJoAxT5i11mQvxELkWLyisQ">Threads</a>. However, this year, there’s much more to say about BOINC, so I decided to create a more detailed report.</p>
+<p>At the start of 2024, I didn’t have high expectations. Yet, the year managed to surprise me — though not always in the ways I had hoped.</p>
+<h3>Reflections on Key Events</h3>
+<p>The main event of the year — the BOINC Anniversary Workshop — was bittersweet for me. While I wasn’t entirely disappointed, I had hoped for more enthusiasm and engagement. I’ve shared more details in a <a href="2024.10.13.html">dedicated blog post</a>, but to summarize: I enjoyed reconnecting with colleagues I’ve worked with over the past five years, and we generated some promising ideas for BOINC’s future. Still, the level of activity fell short of my expectations.</p>
+<p>Another significant event, the <a href="2024.11.02.html">conference in Bielefeld</a>, amplified my concerns. It highlighted a growing need for fundamental changes in BOINC to ensure it continues to meet scientists’ evolving needs. As Adam Jensen, the protagonist of 'Deus Ex: Mankind Divided', aptly said, “The world is different now; the old rules no longer apply.” BOINC has been a unique and valuable resource for scientists over the past 20 years, but it must adapt to stay relevant.</p>
+<h3>Steps Toward Change</h3>
+<p>This year saw the introduction of a new concept: <a href="2024.03.18.html">"Sporadic applications"</a>. These applications sit idle on users’ devices, ready to execute AI and ML tasks on command. While no active project currently utilizes this model, I’m confident we’ll see it adopted in the near future.</p>
+<p>Another exciting development is the upcoming inclusion of <a href="2024.12.01.html">"BUDA (BOINC Universal Docker Applications)"</a> in the next release. This feature will significantly simplify application creation for scientists by leveraging Docker to handle platform-specific challenges. While Android remains an exception due to its increasingly <a href="2024.03.16.html">restrictive nature</a>, BUDA represents a critical step toward greater accessibility and efficiency.</p>
+<h3>Challenges and Delays</h3>
+<p>Despite the progress, the year wasn’t without its setbacks. I initially planned to release two more versions of the BOINC client in 2024, but these have been delayed to Q2 2025. The primary obstacle has been the expired signing key for the Windows installer. The process of acquiring a new key has become much more complex, as offline keys (in PFX format) are no longer permitted. This situation also forced an unplanned migration from the old InstallShield installer to a <a href="2024.12.01.html">new custom solution</a>. While this change was on my long-term roadmap, I hadn’t anticipated addressing it under such time pressure. Once resolved, the release process will closely resemble the streamlined <a href="2024.02.28.html">Linux vanilla packaging process</a>. My ultimate goal is to make releases as simple as a single button click.</p>
+<h3>Looking Ahead</h3>
+<p>2024 was a challenging yet eventful year, filled with progress and lessons. Looking forward, we have ambitious plans to enhance BOINC, making it more advanced and user-friendly. Stay tuned for updates as we bring these ideas to life.</p>
+<p>And now, it’s time to share some statistics from the past year.</p>
+<table>
+<thead><tr><th>Statistic</th><th>Count</th></tr></thead>
+<tbody>
+<tr><td>New issues</td><td>153</td></tr>
+<tr><td>Issues closed</td><td>217</td></tr>
+<tr><td>Total open issues</td><td>445</td></tr>
+<tr><td>New PRs</td><td>332</td></tr>
+<tr><td>PRs closed</td><td>330</td></tr>
+</tbody>
+</table>
 
-    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Read the monthly report for December 2024 to find more information about the 2024 year recap.">
-    <meta name="keywords" content="BOINC, development, Vitalii Koshura, updates, information, 2024 recap">
-    <meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">
-    <link rel="canonical" href="https://aenbleidd.github.io/2025.01.01.html">
-
-    <title>Vitalii Koshura: Maintaining BOINC</title>
-  </head>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-RB9QYE55Z3');
-  </script>
-
-  <body>
-
-    <div class="container">
-      <aside id="menu">
-        <ul id="menu_items"></ul>
-      </aside>
-      <section id="main_content">
-        <div id="blog_post_single"></div>
-        <div id="previous_post_link">
-          <a href="2024.12.01.html">Previous Post: BOINC Development Status Report: November 2024</a>
-        </div>
-      </section>
-      <aside id="right_block" style="margin-left: 100px;"></aside>
-    </div>
-
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-64184707-1");
-        pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
-    <script src="../javascripts/main.js" type="module"></script>
-    <script type="module">
-      import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
-      document.addEventListener('DOMContentLoaded', function() {
-        fetch('2025.01.01.md')
-          .then(response => response.text())
-          .then(text => {
-            const blogContent = document.getElementById('blog_post_single');
-            blogContent.innerHTML = marked.parse(text);
-          })
-          .catch(error => console.error('Error fetching the markdown file:', error));
-      });
-    </script>
-  </body>
-</html>
+<p align="center">
+  <img src="images/2025.01.01.png" alt="BOINC commits and PRs statistics"/>
+</p></div><div id="previous_post_link"><a href="2024.12.01.html">Previous Post: BOINC Development Status Report: November 2024</a></div>
+</section><aside id="right_block" style="margin-left: 100px;"></aside></div>
+<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">try {var pageTracker = _gat._getTracker("UA-64184707-1");pageTracker._trackPageview(); catch(err) {}</script><script src="../javascripts/main.js" type="module"></script>
+<footer><div class="container"><p>Vitalii Koshura © 2025</p></div></footer></body></html>

@@ -1,67 +1,34 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Find more information about the BOINC Workshop 2024 hosted by CERN in Geneva, Switzerland.">
-    <meta name="keywords" content="BOINC, development, Vitalii Koshura, updates, information, workshop, CERN, Geneva">
-    <meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">
-    <link rel="canonical" href="https://aenbleidd.github.io/2024.10.13.html">
-
-    <title>Vitalii Koshura: Maintaining BOINC</title>
-  </head>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-RB9QYE55Z3');
-  </script>
-
-  <body>
-
-    <div class="container">
-      <aside id="menu">
-        <ul id="menu_items"></ul>
-      </aside>
-      <section id="main_content">
-        <div id="blog_post_single"></div>
-        <div id="previous_post_link">
-          <a href="2024.04.01.html">Previous Post: BOINC Release 8.0.0 and liblzma vulnerability</a>
-        </div>
-      </section>
-      <aside id="right_block" style="margin-left: 100px;"></aside>
-    </div>
-
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-64184707-1");
-        pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
-    <script src="../javascripts/main.js" type="module"></script>
-    <script type="module">
-      import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
-      document.addEventListener('DOMContentLoaded', function() {
-        fetch('2024.10.13.md')
-          .then(response => response.text())
-          .then(text => {
-            const blogContent = document.getElementById('blog_post_single');
-            blogContent.innerHTML = marked.parse(text);
-          })
-          .catch(error => console.error('Error fetching the markdown file:', error));
-      });
-    </script>
-  </body>
-</html>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">
+<meta name="description" content="Find more information about the BOINC Workshop 2024 hosted by CERN in Geneva, Switzerland."><meta name="keywords" content="BOINC, development, Vitalii Koshura, updates, information, workshop, CERN, Geneva"><link rel="canonical" href="https://aenbleidd.github.io/2024.10.13.html"><title>BOINC Workshop 2024: What's next?</title>
+<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-RB9QYE55Z3');</script>
+<body>
+<header><div class="container"><h1>Vitalii Koshura: Maintaining BOINC</h1></div></header>
+<div class="container"><aside id="menu"><ul id="menu_items"></ul></aside><section id="main_content"><div id="blog_post_single">
+<h1>BOINC Workshop 2024: What's next?</h1>
+<p>This year, the BOINC Workshop was hosted by CERN in Geneva. I was very excited to go there and finally meet the people I had been working with virtually for more than five years. I had planned to write a blog post about this at the beginning of June, right after the Workshop. But after spending three days there, I decided to take some time to reflect on the experience. Over the last four months (and even longer by now), I’ve tried to write this post, but each time I wasn’t ready. However, there’s no reason to hold back any longer, and I feel it's time to share my thoughts.</p>
+<p>I don’t want to repeat what David Anderson has already written, so I’ll just link to his post <a href="https://continuum-hypothesis.com/trips/geneva_24.php">here</a>. It’s a very detailed and good report about the BOINC Workshop, the WSIS prize (and the cake!), and Geneva in general. My thoughts about those three days are pretty much in line with David’s.</p>
+<p>The people were great, and the location was nice, but I left with a slightly bitter taste. Mostly because I was expecting to see more new faces - people who are new to BOINC - but instead, I only saw familiar ones.</p>
+<p>I fully understand that the world has changed, and people are excited about entirely different things now.</p>
+<p>I remember myself about 15 years ago, staring at the graphics of the SETI@Home application. It was completely incomprehensible to me, but still mesmerizing. My PC back then had a single-core 1.8 GHz CPU, and I saw that finishing just one SETI@Home work unit would take several hours, yet I had the feeling that my computer was doing something great and important.</p>
+<p>Today’s youth get bored if something takes longer than 10 seconds (is that TikTok’s fault?). I’m not that old (almost 35), but I see that things that used to excite me and the people I knew just don’t capture interest anymore. And I don’t like that.</p>
+<p>I don’t think I can change this on a global scale, but I still believe in BOINC and its mission. I still believe BOINC is important. I know there are a lot of smart people with great ideas, but they often lack the means to implement them. Our mission is to help them.</p>
+<p>During the Workshop, we discussed the need to implement Docker support in BOINC since it could significantly accelerate research. Scientists today no longer create applications in C/C++ or similar languages — they prefer using Python (which is slower to run but faster to develop). Having the ability to run complex Python scripts on BOINC without having to worry about the different platforms those scripts might run on is incredibly important. David Anderson is working on the first draft of a Docker wrapper for BOINC, and when it’s released, I’m sure it will open a new chapter in BOINC’s story of success.</p>
+<p align="center">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLyXz11Y4IoHHFTE0PkZAuKXl_QTN2E7hlyUUYQdGm1GBkwgWoudRwk-ntcM6srPPHwiCw5Ilax_JJ7i3eioGSIKXfkfw-BVYufyYkg-ul-QdSN9jpBU3qNvXxE1L7pDiRpU4q9OkjTwDyrrkhV1ZoRKc-DhuFCTSZ3ZdPrUnGPJQRwLTrbbQT8Ek4LWg9/w480-h640/IMG_3537.JPG" alt="Black mug with the text 'Science doesn\'t give a fuck what you believe.'"/>
+</p></div><div id="previous_post_link"><a href="2024.04.01.html">Previous Post: BOINC Release 8.0.0 and liblzma vulnerability</a></div>
+</section><aside id="right_block" style="margin-left: 100px;"></aside></div>
+<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">try {var pageTracker = _gat._getTracker("UA-64184707-1");pageTracker._trackPageview(); catch(err) {}</script><script src="../javascripts/main.js" type="module"></script>
+<footer><div class="container"><p>Vitalii Koshura © 2025</p></div></footer></body></html>

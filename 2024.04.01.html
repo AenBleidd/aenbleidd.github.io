@@ -1,67 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">
+<meta name="description" content="Find more information about the liblzma vulnerability and its impact on BOINC."><meta name="keywords" content="BOINC, development, Vitalii Koshura, updates, information, liblzma, vulnerability"><link rel="canonical" href="https://aenbleidd.github.io/2024.04.01.html"><title>BOINC Release 8.0.0 and liblzma vulnerability</title>
+<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-RB9QYE55Z3');</script>
+<body>
+<header><div class="container"><h1>Vitalii Koshura: Maintaining BOINC</h1></div></header>
+<div class="container"><aside id="menu"><ul id="menu_items"></ul></aside><section id="main_content"><div id="blog_post_single">
+<h1>BOINC Release 8.0.0 and liblzma vulnerability</h1>
+<p align="center">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZT8k2Qn3QqFP6irk-ndLuTb1cUena-KRNDIMnEuZTy_cUlJCNALklohTzQ8X_1bLNSB8VkylW__G5aBGfRyZTLH6C9uD_h505BWwxQOgaarwSR-MXZ5AHN2od5xiI6WmSsJxDe9MnXiZNmTiSv4f08PpMbgUeQCEnbevnjONldZ4xEZALRT_bR8zpAfiO/w647-h486/74f1822a50ba58c7.jpeg" alt="xz inside photo"/>
+</p>
 
-    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Find more information about the liblzma vulnerability and its impact on BOINC.">
-    <meta name="keywords" content="BOINC, development, Vitalii Koshura, updates, information, liblzma, vulnerability">
-    <meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">
-    <link rel="canonical" href="https://aenbleidd.github.io/2024.04.01.html">
-
-    <title>Vitalii Koshura: Maintaining BOINC</title>
-  </head>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-RB9QYE55Z3');
-  </script>
-
-  <body>
-
-    <div class="container">
-      <aside id="menu">
-        <ul id="menu_items"></ul>
-      </aside>
-      <section id="main_content">
-        <div id="blog_post_single"></div>
-        <div id="previous_post_link">
-          <a href="2024.03.18.html">Previous Post: Major BOINC version change</a>
-        </div>
-      </section>
-      <aside id="right_block" style="margin-left: 100px;"></aside>
-    </div>
-
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-64184707-1");
-        pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
-    <script src="../javascripts/main.js" type="module"></script>
-    <script type="module">
-      import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
-      document.addEventListener('DOMContentLoaded', function() {
-        fetch('2024.04.01.md')
-          .then(response => response.text())
-          .then(text => {
-            const blogContent = document.getElementById('blog_post_single');
-            blogContent.innerHTML = marked.parse(text);
-          })
-          .catch(error => console.error('Error fetching the markdown file:', error));
-      });
-    </script>
-  </body>
-</html>
+<p>Recently it was discovered that liblzma - the popular library for data compression/decompression - contains a <a href="https://tukaani.org/xz-backdoor/">severe vulnerability</a>.</p>
+<p>Unfortunately, BOINC 8.0.0, that is available for alpha testing, was built with the malicious 5.6.0 version of this library.</p>
+<p>This is because liblzma is the dependency of libtiff that is a dependency of wxWidgets, that is used to build the GUI of BOINC Manager.</p>
+<p>As far as we can see, this issue doesn't affect our users, since the target of this 'backdoor' is an sshd process, and BOINC doesn't work with it in any way. Just to highlight one more time: only BOINC Manager was built with this library, and BOINC client doesn't use this dependency at all. So we strongly believe that our users are completely safe while using BOINC version 8.0.0.</p>
+<p>But since the analysis of this backdoor is not finished yet, we have decided to build another release 8.0.1 that downgrades the liblzma version to 5.4.4 that is completely safe. According to the available data, this backdoor works on Linux only, that is why BOINC 8.0.1 will be released for alpha testing for Linux only.</p>
+<p>We will continue monitoring the situation, and if needed, will release 8.0.1 for other platforms as well.</p>
+<p>Please use this page to find the instructions about using the <a href="https://boinc.berkeley.edu/linux_install.php">BOINC Linux packages</a>.</p>
+<p>Thank you for understanding.</p>
+<p align="center">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTmxMxc7mfxobQJF-0ygdqhtEvP6rfkL4VItg9GbJgxpp7pGr5wAmlJaW0nDPE73m3VHsWZf93GM4q6A5WStCBjia7TE_FVcSEaHndvu408IwdBbRiyfhFxQ0ZB-los2nG1PgapRWpVRs4XLWb1iWw3B5Vr5K_Xp8LtRN08Kivt1TN1vGrPCw8JYVbfoLM/w642-h362/maxime-GsuoClhxMDE-unsplash.jpg" alt="COVID-19 times: man and woman instead of handshake touch each other with their elbows"/>
+</p></div><div id="previous_post_link"><a href="2024.03.18.html">Previous Post: Major BOINC version change</a></div>
+</section><aside id="right_block" style="margin-left: 100px;"></aside></div>
+<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">try {var pageTracker = _gat._getTracker("UA-64184707-1");pageTracker._trackPageview(); catch(err) {}</script><script src="../javascripts/main.js" type="module"></script>
+<footer><div class="container"><p>Vitalii Koshura © 2025</p></div></footer></body></html>

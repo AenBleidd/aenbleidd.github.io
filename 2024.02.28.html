@@ -1,67 +1,39 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">
+<meta name="description" content="Find more details about the purpose of vanilla BOINC packages for DEB and RPM based Linux distributions."><meta name="keywords" content="BOINC, development, Vitalii Koshura, updates, information, Linux, DEB, RPM"><link rel="canonical" href="https://aenbleidd.github.io/2024.02.28.html"><title>Vanilla BOINC packages: the reason and the purpose</title>
+<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-RB9QYE55Z3');</script>
+<body>
+<header><div class="container"><h1>Vitalii Koshura: Maintaining BOINC</h1></div></header>
+<div class="container"><aside id="menu"><ul id="menu_items"></ul></aside><section id="main_content"><div id="blog_post_single">
+<h1>Vanilla BOINC packages: the reason and the purpose</h1>
+<p align="center">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjX7cvfmaHm-nq5CHEwPSVZmnSXaEZEEwUWhnJGX3UsVqBPXwgm1UPC5lR7JhSLsJhE-L0hgAxCT1UWYMDirvmlTxhQcQ6DVio5_APtXjd9TtkTNik1XiyDTIZfM5rk3FXLiOEvy9z-OtsbLXdaTI8rCPh9QA2nFXBOnATlWqN0fSRS3OJWpd095ocNXMEi/s3159/boinc_tux.png" alt="Linux Tux loves BOINC"/>
+</p>
 
-    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Find more details about the purpose of vanilla BOINC packages for DEB and RPM based Linux distributions.">
-    <meta name="keywords" content="BOINC, development, Vitalii Koshura, updates, information, Linux, DEB, RPM">
-    <meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">
-    <link rel="canonical" href="https://aenbleidd.github.io/2024.02.28.html">
+<p>I have very controversial feelings about open-source software and Linux OS. From one hand, I like the idea of the transparency, when you can always check what is really doing every application you run. From the other hand, as a maintainer of the application, you lose some part of control on it, because it is possible to modify some application's behavior (e.g. via distro patches), that contradicts the original idea of it or break some functionality. And because there are so many different OSs, you can't keep an eye on all of them. That is why sometimes you receive a bug report that looks completely weird, and when you start doing the investigation, you realize, that this happened because of the distro patch, that was intended to fix another issue, but as a result introduced a new one. And, as a maintainer of the application, there are not so much options for you here. But in any case, you have unsatisfied user, that is always bad.</p>
+<p>We, at BOINC, faced several times the situation when the package that is distributed with the distro is completely broken, and users have no idea how to fix that. You can post instructions, blog posts, answer questions of forums, but still the same question about the same bug will be asked. Sometimes the communication with the distro maintainers becomes hot, and every party is completely sure that only their opinion is correct.</p>
+<p>To get rid of this situation, we decided to create our own BOINC vanilla builds for Linux. We have started with the most popular distributions: Debian, Ubuntu, Fedora and openSUSE. Currently we target only the LTS releases that are officially supported, so that is why for now we provide packages for Ubuntu 20.04 and 22.04 only.</p>
+<p>More details (including the list of supported OSs) are <a href="https://github.com/BOINC/boinc/wiki/Linux-DEB-and-RPM-support">here</a>.</p>
+<p>Since building all these packages (20 in total for every version) is quite a task, I had to try to automate this as much as possible, including adding some integration tests to avoid very dumb bugs. I can't say that the current CI is finished, but it does its work already: every night we have a new build that is automatically published to the 'nightly' channel on the BOINC official website. This gives our users the opportunity to test new features as soon as they added to the codebase even before the alpha testing phase begins. I can't say this is a recommended way of installing BOINC, but since we have now 2-3 releases every year, it might be helpful for those who have problems with the issues that are blockers for them only.</p>
+<p>These packages are not yet recommended to use, but the first result is already very promising. On the video below the process of installation of both BOINC client and Manager on Ubuntu 22.04 is shown:</p>
+<p align="center">
+  <iframe allowfullscreen="" class="BLOG_video_class" height="416" src="https://www.youtube.com/embed/DSxUckiTzPE" width="501" youtube-src-id="DSxUckiTzPE"/></iframe>
+</p>
 
-    <title>Vitalii Koshura: Maintaining BOINC</title>
-  </head>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-RB9QYE55Z3');
-  </script>
-
-  <body>
-
-    <div class="container">
-      <aside id="menu">
-        <ul id="menu_items"></ul>
-      </aside>
-      <section id="main_content">
-        <div id="blog_post_single"></div>
-        <div id="previous_post_link">
-          <a href="2023.10.14.html">Previous Post: Introduction</a>
-        </div>
-      </section>
-      <aside id="right_block" style="margin-left: 100px;"></aside>
-    </div>
-
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-64184707-1");
-        pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
-    <script src="../javascripts/main.js" type="module"></script>
-    <script type="module">
-      import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
-      document.addEventListener('DOMContentLoaded', function() {
-        fetch('2024.02.28.md')
-          .then(response => response.text())
-          .then(text => {
-            const blogContent = document.getElementById('blog_post_single');
-            blogContent.innerHTML = marked.parse(text);
-          })
-          .catch(error => console.error('Error fetching the markdown file:', error));
-      });
-    </script>
-  </body>
-</html>
+<p>Of course, there are still some issues, but now it will be much easier to fix them and deliver to our users faster.</p>
+<p>Stay tuned for further updates.</p></div><div id="previous_post_link"><a href="2023.10.14.html">Previous Post: Introduction</a></div>
+</section><aside id="right_block" style="margin-left: 100px;"></aside></div>
+<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">try {var pageTracker = _gat._getTracker("UA-64184707-1");pageTracker._trackPageview(); catch(err) {}</script><script src="../javascripts/main.js" type="module"></script>
+<footer><div class="container"><p>Vitalii Koshura © 2025</p></div></footer></body></html>

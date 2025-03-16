@@ -1,99 +1,100 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Vitalii Koshura: Maintaining BOINC</title>
-  <link href="https://aenbleidd.github.io/rss.xml" rel="self"/>
-  <link href="https://aenbleidd.github.io/"/>
-  <updated>2025-02-02T00:00:00Z</updated>
-  <author>
-    <name>Vitalii Koshura</name>
-  </author>
-  <id>https://aenbleidd.github.io/</id>
+<title>Vitalii Koshura: Maintaining BOINC</title>
+<link href="https://aenbleidd.github.io/rss.xml" rel="self"/>
+<link href="https://aenbleidd.github.io/"/>
+<updated>2025-03-11T00:00:00Z</updated>
+<author>
+<name>Vitalii Koshura</name>
+</author>
+<id>https://aenbleidd.github.io/</id>
 
-  <entry>
-    <title>BOINC Development Status Report: February 2025</title>
-    <link href="https://aenbleidd.github.io/2025.03.11.html"/>
-    <id>https://aenbleidd.github.io/2025.03.11.html</id>
-    <updated>2025-03-11T00:00:00Z</updated>
-    <summary>Read the monthly report for February 2025 to find more information about the latest updates in BOINC development.</summary>
-  </entry>
+<entry>
+<title>BOINC Development Status Report: February 2025</title>
+<link href="https://aenbleidd.github.io/2025.03.11.html"/>
+<id>https://aenbleidd.github.io/2025.03.11.html</id>
+<updated>2025-03-11T00:00:00Z</updated>
+<summary>Read the monthly report for February 2025 to find more information about the future release plans.</summary>
+</entry>
 
-  <entry>
-    <title>BOINC Development Status Report: January 2025</title>
-    <link href="https://aenbleidd.github.io/2025.02.02.html"/>
-    <id>https://aenbleidd.github.io/2025.02.02.html</id>
-    <updated>2025-02-02T00:00:00Z</updated>
-    <summary>Read the monthly report for January 2025 to find more information about the latest updates in BOINC development.</summary>
-  </entry>
+<entry>
+<title>BOINC Development Status Report: January 2025</title>
+<link href="https://aenbleidd.github.io/2025.02.02.html"/>
+<id>https://aenbleidd.github.io/2025.02.02.html</id>
+<updated>2025-02-02T00:00:00Z</updated>
+<summary>Read the monthly report for January 2025 to find more information about the future release plans.</summary>
+</entry>
 
-  <entry>
-    <title>BOINC Development Status Report: December 2024</title>
-    <link href="https://aenbleidd.github.io/2025.01.01.html"/>
-    <id>https://aenbleidd.github.io/2025.01.01.html</id>
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Read the monthly report for December 2024 to find more information about the 2024 year recap.</summary>
-  </entry>
+<entry>
+<title>BOINC Development Status Report: December 2024</title>
+<link href="https://aenbleidd.github.io/2025.01.01.html"/>
+<id>https://aenbleidd.github.io/2025.01.01.html</id>
+<updated>2025-01-01T00:00:00Z</updated>
+<summary>Read the monthly report for December 2024 to find more information about the 2024 year recap.</summary>
+</entry>
 
-  <entry>
-    <title>BOINC Development Status Report: November 2024</title>
-    <link href="https://aenbleidd.github.io/2024.12.01.html"/>
-    <id>https://aenbleidd.github.io/2024.12.01.html</id>
-    <updated>2024-12-01T00:00:00Z</updated>
-    <summary>Read the monthly report for November 2024 to find more information about the Windows installer and BUDA: the new Docker based type of BOINC applications.</summary>
-  </entry>
+<entry>
+<title>BOINC Development Status Report: November 2024</title>
+<link href="https://aenbleidd.github.io/2024.12.01.html"/>
+<id>https://aenbleidd.github.io/2024.12.01.html</id>
+<updated>2024-12-01T00:00:00Z</updated>
+<summary>Read the monthly report for November 2024 to find more information about the Windows installer and BUDA: the new Docker based type of BOINC applications.</summary>
+</entry>
 
-  <entry>
-    <title>BOINC Development Status Report: October 2024</title>
-    <link href="https://aenbleidd.github.io/2024.11.02.html"/>
-    <id>https://aenbleidd.github.io/2024.11.02.html</id>
-    <updated>2024-11-02T00:00:00Z</updated>
-    <summary>Read the monthly report for October 2024 to find more information about the WSL and Docker features in the upcoming release of BOINC.</summary>
-  </entry>
+<entry>
+<title>BOINC Development Status Report: October 2024</title>
+<link href="https://aenbleidd.github.io/2024.11.02.html"/>
+<id>https://aenbleidd.github.io/2024.11.02.html</id>
+<updated>2024-11-02T00:00:00Z</updated>
+<summary>Read the monthly report for October 2024 to find more information about the WSL and Docker features in the upcoming release of BOINC.</summary>
+</entry>
 
-  <entry>
-    <title>BOINC Workshop 2024: What's next?</title>
-    <link href="https://aenbleidd.github.io/2024.10.13.html"/>
-    <id>https://aenbleidd.github.io/2024.10.13.html</id>
-    <updated>2024-10-13T00:00:00Z</updated>
-    <summary>Find more information about the BOINC Workshop 2024 hosted by CERN in Geneva, Switzerland.</summary>
-  </entry>
+<entry>
+<title>BOINC Workshop 2024: What's next?</title>
+<link href="https://aenbleidd.github.io/2024.10.13.html"/>
+<id>https://aenbleidd.github.io/2024.10.13.html</id>
+<updated>2024-10-13T00:00:00Z</updated>
+<summary>Find more information about the BOINC Workshop 2024 hosted by CERN in Geneva, Switzerland.</summary>
+</entry>
 
-  <entry>
-    <title>BOINC Release 8.0.0 and liblzma vulnerability</title>
-    <link href="https://aenbleidd.github.io/2024.04.01.html"/>
-    <id>https://aenbleidd.github.io/2024.04.01.html</id>
-    <updated>2024-04-01T00:00:00Z</updated>
-    <summary>Find more information about the liblzma vulnerability and its impact on BOINC.</summary>
-  </entry>
+<entry>
+<title>BOINC Release 8.0.0 and liblzma vulnerability</title>
+<link href="https://aenbleidd.github.io/2024.04.01.html"/>
+<id>https://aenbleidd.github.io/2024.04.01.html</id>
+<updated>2024-04-01T00:00:00Z</updated>
+<summary>Find more information about the liblzma vulnerability and its impact on BOINC.</summary>
+</entry>
 
-  <entry>
-    <title>Major BOINC version change</title>
-    <link href="https://aenbleidd.github.io/2024.03.18.html"/>
-    <id>https://aenbleidd.github.io/2024.03.18.html</id>
-    <updated>2024-03-18T00:00:00Z</updated>
-    <summary>Find more information about the new major release of BOINC.</summary>
-  </entry>
+<entry>
+<title>Major BOINC version change</title>
+<link href="https://aenbleidd.github.io/2024.03.18.html"/>
+<id>https://aenbleidd.github.io/2024.03.18.html</id>
+<updated>2024-03-18T00:00:00Z</updated>
+<summary>Find more information about the new major release of BOINC.</summary>
+</entry>
 
-  <entry>
-    <title>Android BOINC: where are my GPUs?</title>
-    <link href="https://aenbleidd.github.io/2024.03.16.html"/>
-    <id>https://aenbleidd.github.io/2024.03.16.html</id>
-    <updated>2024-03-16T00:00:00Z</updated>
-    <summary>Find more information about Android GPUs and their detection by BOINC client.</summary>
-  </entry>
+<entry>
+<title>Android BOINC: where are my GPUs?</title>
+<link href="https://aenbleidd.github.io/2024.03.16.html"/>
+<id>https://aenbleidd.github.io/2024.03.16.html</id>
+<updated>2024-03-16T00:00:00Z</updated>
+<summary>Find more information about Android GPUs and their detection by BOINC client.</summary>
+</entry>
 
-  <entry>
-    <title>Vanilla BOINC packages: the reason and the purpose</title>
-    <link href="https://aenbleidd.github.io/2024.02.28.html"/>
-    <id>https://aenbleidd.github.io/2024.02.28.html</id>
-    <updated>2024-02-28T00:00:00Z</updated>
-    <summary>Find more details about the purpose of vanilla BOINC packages for DEB and RPM based Linux distributions.</summary>
-  </entry>
+<entry>
+<title>Vanilla BOINC packages: the reason and the purpose</title>
+<link href="https://aenbleidd.github.io/2024.02.28.html"/>
+<id>https://aenbleidd.github.io/2024.02.28.html</id>
+<updated>2024-02-28T00:00:00Z</updated>
+<summary>Find more details about the purpose of vanilla BOINC packages for DEB and RPM based Linux distributions.</summary>
+</entry>
 
-  <entry>
-    <title>Introduction</title>
-    <link href="https://aenbleidd.github.io/2023.10.14.html"/>
-    <id>https://aenbleidd.github.io/2023.10.14.html</id>
-    <updated>2023-10-14T00:00:00Z</updated>
-    <summary>Find more information about the purpose of this blog about BOINC development.</summary>
-  </entry>
+<entry>
+<title>Introduction</title>
+<link href="https://aenbleidd.github.io/2023.10.14.html"/>
+<id>https://aenbleidd.github.io/2023.10.14.html</id>
+<updated>2023-10-14T00:00:00Z</updated>
+<summary>Find more information about the purpose of this blog about BOINC development.</summary>
+</entry>
 </feed>

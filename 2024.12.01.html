@@ -1,67 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">
+<meta name="description" content="Read the monthly report for November 2024 to find more information about the Windows installer and BUDA: the new Docker based type of BOINC applications."><meta name="keywords" content="BOINC, development, Vitalii Koshura, updates, information, Windows installer, BUDA, Docker, release"><link rel="canonical" href="https://aenbleidd.github.io/2024.12.01.html"><title>BOINC Development Status Report: November 2024</title>
+<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-RB9QYE55Z3');</script>
+<body>
+<header><div class="container"><h1>Vitalii Koshura: Maintaining BOINC</h1></div></header>
+<div class="container"><aside id="menu"><ul id="menu_items"></ul></aside><section id="main_content"><div id="blog_post_single">
+<h1>BOINC Development Status Report: November 2024</h1>
+<p>November was a productive month.</p>
+<p>During this month, 24 pull requests (PRs) were merged, contributing to a total of 49 commits.</p>
+<p align="center">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhIP8Gx8GkRWbnppeT8uCFLdzCQHTiwU2bExLaqW4VbYcdcgKsRhtiRb6SwaeAbOQxFHeAvNTiVK0Uk_E10M5rLsSxVV7fVzVhceT_pn_DGQTv2hvj5qZpsPLKx7NtxwgfwxjAHxV2Ce0gKL7E1tQCqirY2sGevGC4q8BqvOt7rLo1Vkgku6GHDM2FESlJ6/w640-h397/Statistics%202024.png" alt="BOINC commits and PRs statistics"/>
+</p>
 
-    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Read the monthly report for November 2024 to find more information about the Windows installer and BUDA: the new Docker based type of BOINC applications.">
-    <meta name="keywords" content="BOINC, development, Vitalii Koshura, updates, information, Windows installer, BUDA, Docker, release">
-    <meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">
-    <link rel="canonical" href="https://aenbleidd.github.io/2024.12.01.html">
+<p>David completed the main phase of Docker support for BOINC. This functionality will undergo internal testing before being rolled out publicly.</p>
+<p>Excitingly, it now has a new name: <a href="https://github.com/BOINC/boinc/wiki/BUDA-overview">BUDA</a>.</p>
+<p>The first project to benefit from this new application type is <a href="https://boinc.berkeley.edu/central">BOINC Central</a>. While there is no exact release date yet, we anticipate it will be available either before Christmas this year or shortly afterward. We’ll share an announcement once everything is finalized.</p>
+<p>Meanwhile, I have been working on a new Windows installer. We’ve been planning to replace the outdated InstallShield installer for several years. Not only does it require an expensive license, but the version we are licensed for dates back to 2011 and only works on a virtual machine running Windows XP.</p>
+<p>This setup has made creating new releases cumbersome and has prevented us from integrating the build process into GitHub. (For instance, our <a href="https://boinc.berkeley.edu/linux_install.php">Linux packages</a> build and release pipeline on GitHub is robust and efficient; I’ve described it in detail <a href="2024.02.28.html">here</a>).</p>
+<p>Unexpected complications accelerated this transition. The old signing key expired, and the new one is incompatible with the format supported by InstallShield. Modern requirements mandate either a physical dongle or a cloud solution for signing executables, leaving us unable to make new releases without implementing a new installer. Initially, I planned to use WiX for the new installer. However, after several weeks, I realized that WiX is too complex and restrictive for our needs. I prefer full control over my work, and WiX couldn’t provide that flexibility. Instead, I decided to develop our own installer, using JSON to define the installation package.</p>
+<p>It’s not perfect or fully polished yet, but it’s already running smoothly:</p>
+<p align="center">
+  <iframe allowfullscreen="" class="BLOG_video_class" height="495" src="https://www.youtube.com/embed/zDdI8gJtfUE" width="664" youtube-src-id="zDdI8gJtfUE"></iframe>
+</p>
 
-    <title>Vitalii Koshura: Maintaining BOINC</title>
-  </head>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-RB9QYE55Z3');
-  </script>
-
-  <body>
-
-    <div class="container">
-      <aside id="menu">
-        <ul id="menu_items"></ul>
-      </aside>
-      <section id="main_content">
-        <div id="blog_post_single"></div>
-        <div id="previous_post_link">
-          <a href="2024.11.02.html">Previous Post: BOINC Development Status Report: October 2024</a>
-        </div>
-      </section>
-      <aside id="right_block" style="margin-left: 100px;"></aside>
-    </div>
-
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-64184707-1");
-        pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
-    <script src="../javascripts/main.js" type="module"></script>
-    <script type="module">
-      import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
-      document.addEventListener('DOMContentLoaded', function() {
-        fetch('2024.12.01.md')
-          .then(response => response.text())
-          .then(text => {
-            const blogContent = document.getElementById('blog_post_single');
-            blogContent.innerHTML = marked.parse(text);
-          })
-          .catch(error => console.error('Error fetching the markdown file:', error));
-      });
-    </script>
-  </body>
-</html>
+<p>We continue to make progress on both BUDA and the new installer to ensure they’re available as soon as possible.</p></div><div id="previous_post_link"><a href="2024.11.02.html">Previous Post: BOINC Development Status Report: October 2024</a></div>
+</section><aside id="right_block" style="margin-left: 100px;"></aside></div>
+<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">try {var pageTracker = _gat._getTracker("UA-64184707-1");pageTracker._trackPageview(); catch(err) {}</script><script src="../javascripts/main.js" type="module"></script>
+<footer><div class="container"><p>Vitalii Koshura © 2025</p></div></footer></body></html>
