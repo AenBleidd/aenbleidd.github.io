@@ -79,41 +79,33 @@ for post in blog_posts:
         content = f.read()
     html_content = markdown.markdown(content)
     with open(f"{post['file']}.html", 'w', encoding='utf-8') as f:
-        f.write("""
-<!DOCTYPE html>
+        f.write("""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset='utf-8'>
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">
-""")
+<meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">""")
         f.write(f'<meta name="description" content="{post["description"]}">')
         f.write(f'<meta name="keywords" content="{post["keywords"]}">')
         f.write(f'<link rel="canonical" href="https://aenbleidd.github.io/{post["file"]}.html">')
         f.write(f'<title>{post["title"]}</title>')
-        f.write("""
-<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+        f.write("""<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-RB9QYE55Z3');</script>
-<body>
-""")
+<body>""")
         f.write('<header><div class="container"><h1>Vitalii Koshura: Maintaining BOINC</h1></div></header>')
-        f.write("""
-<div class="container"><aside id="menu"><ul id="menu_items"></ul></aside><section id="main_content"><div id="blog_post_single">
-""")
+        f.write("""<div class="container"><aside id="menu"><ul id="menu_items"></ul></aside><section id="main_content"><div id="blog_post_single">""")
         f.write(html_content)
         f.write('</div>')
         if previous_post:
             f.write(f'<div id="previous_post_link"><a href="{previous_post["file"]}.html">Previous Post: {previous_post["title"]}</a></div>')
-        f.write("""
-</section><aside id="right_block" style="margin-left: 100px;"></aside></div>
+        f.write("""</section><aside id="right_block" style="margin-left: 100px;"></aside></div>
 <script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
-<script type="text/javascript">try {var pageTracker = _gat._getTracker("UA-64184707-1");pageTracker._trackPageview(); catch(err) {}</script><script src="../javascripts/main.js" type="module"></script>
-""")
+<script type="text/javascript">try {var pageTracker = _gat._getTracker("UA-64184707-1");pageTracker._trackPageview(); catch(err) {}</script><script src="../javascripts/main.js" type="module"></script>""")
         f.write('<footer><div class="container"><p>Vitalii Koshura © 2025</p></div></footer></body></html>')
         previous_post = post
 
@@ -128,46 +120,31 @@ with open('index.html', 'r', encoding='utf-8') as f:
       f.write(content)
 
 with open('rss.xml', 'w', encoding='utf-8') as f:
-    f.write("""
-<?xml version="1.0" encoding="UTF-8"?>
+    f.write("""<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Vitalii Koshura: Maintaining BOINC</title>
 <link href="https://aenbleidd.github.io/rss.xml" rel="self"/>
-<link href="https://aenbleidd.github.io/"/>
-""")
+<link href="https://aenbleidd.github.io/"/>""")
     f.write(f'<updated>{blog_posts[-1]['file'].replace('.', '-')}T00:00:00Z</updated>')
-    f.write("""
-<author>
+    f.write("""<author>
 <name>Vitalii Koshura</name>
 </author>
-<id>https://aenbleidd.github.io/</id>
-""")
+<id>https://aenbleidd.github.io/</id>""")
     for post in reversed(blog_posts):
-        f.write(f"""
-<entry>
+        f.write(f"""<entry>
 <title>{post['title']}</title>
 <link href="https://aenbleidd.github.io/{post['file']}.html"/>
 <id>https://aenbleidd.github.io/{post['file']}.html</id>
 <updated>{post['file'].replace('.', '-')}T00:00:00Z</updated>
 <summary>{post['description']}</summary>
-</entry>
-""")
+</entry>""")
     f.write('</feed>')
 
 with open('sitemap.xml', 'w', encoding='utf-8') as f:
-    f.write("""
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://aenbleidd.github.io/</loc>
-""")
-    f.write(f'<lastmod>{blog_posts[-1]["file"].replace(".", "-")}T00:00:00Z</lastmod>')
-    f.write('</url>')
+    f.write("""<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://aenbleidd.github.io/</loc>""")
+    f.write(f'<lastmod>{blog_posts[-1]["file"].replace(".", "-")}T00:00:00Z</lastmod></url>')
     for post in reversed(blog_posts):
-        f.write(f"""
-<url>
-<loc>https://aenbleidd.github.io/{post['file']}.html</loc>
-""")
+        f.write(f'<url><loc>https://aenbleidd.github.io/{post['file']}.html</loc>')
         f.write(f'<lastmod>{post["file"].replace(".", "-")}T00:00:00Z</lastmod>')
         f.write('</url>')
     f.write('</urlset>')
