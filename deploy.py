@@ -105,7 +105,7 @@ for post in blog_posts:
             f.write(f'<div id="previous_post_link"><a href="{previous_post["file"]}.html">Previous Post: {previous_post["title"]}</a></div>')
         f.write("""</section><aside id="right_block" style="margin-left: 100px;"></aside></div>
 <script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
-<script type="text/javascript">try {var pageTracker = _gat._getTracker("UA-64184707-1");pageTracker._trackPageview(); catch(err) {}</script><script src="../javascripts/main.js" type="module"></script>""")
+<script type="text/javascript">try {var pageTracker = _gat._getTracker("UA-64184707-1");pageTracker._trackPageview();} catch(err) {}</script><script src="../javascripts/main.js" type="module"></script>""")
         f.write('<footer><div class="container"><p>Vitalii Koshura © 2025</p></div></footer></body></html>')
         previous_post = post
 
@@ -141,7 +141,7 @@ with open('rss.xml', 'w', encoding='utf-8') as f:
     f.write('</feed>')
 
 with open('sitemap.xml', 'w', encoding='utf-8') as f:
-    f.write("""<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://aenbleidd.github.io/</loc>""")
+    f.write("""<?xml version='1.0' encoding='UTF-8'?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://aenbleidd.github.io/</loc>""")
     f.write(f'<lastmod>{blog_posts[-1]["file"].replace(".", "-")}T00:00:00Z</lastmod></url>')
     for post in reversed(blog_posts):
         f.write(f'<url><loc>https://aenbleidd.github.io/{post['file']}.html</loc>')
