@@ -90,7 +90,8 @@ for post in blog_posts:
         f.write(f'<meta name="keywords" content="{post["keywords"]}">')
         f.write(f'<link rel="canonical" href="https://aenbleidd.github.io/{post["file"]}.html">')
         f.write(f'<title>{post["title"]}</title>')
-        f.write("""<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+        f.write("""<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
 </head>
 <!-- Google tag (gtag.js) -->
