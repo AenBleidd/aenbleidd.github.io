@@ -1,17 +1,3 @@
-const blogFiles = [
-  { file: '2025.03.11.html', title: 'BOINC Development Status Report: February 2025' },
-  { file: '2025.02.02.html', title: 'BOINC Development Status Report: January 2025' },
-  { file: '2025.01.01.html', title: 'BOINC Development Status Report: December 2024' },
-  { file: '2024.12.01.html', title: 'BOINC Development Status Report: November 2024' },
-  { file: '2024.11.02.html', title: 'BOINC Development Status Report: October 2024' },
-  { file: '2024.10.13.html', title: 'BOINC Workshop 2024: What\'s next?' },
-  { file: '2024.04.01.html', title: 'BOINC Release 8.0.0 and liblzma vulnerability' },
-  { file: '2024.03.18.html', title: 'Major BOINC version change' },
-  { file: '2024.03.16.html', title: 'Android BOINC: where are my GPUs?' },
-  { file: '2024.02.28.html', title: 'Vanilla BOINC packages: the reason and the purpose' },
-  { file: '2023.10.14.html', title: 'Introduction' }
-];
-
 // List of example photo URLs
 const photoList = [
   'https://live.staticflickr.com/65535/54090603617_4bfcc69a65_m.jpg',
@@ -30,23 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
   menuItems.appendChild(li);
   const blogLi = document.createElement('li');
   const blogToggle = document.createElement('a');
-  blogToggle.id = 'blog_toggle';
-  blogToggle.href = '#';
+  blogToggle.href = 'blog.html';
   blogToggle.textContent = 'Blog';
-  const blogItems = document.createElement('ul');
-  blogItems.id = 'blog_items';
-  blogItems.style.display = 'none';
-
-  blogToggle.addEventListener('click', function(event) {
-    event.preventDefault();
-    if (blogItems.style.display === 'none') {
-      blogItems.style.display = 'block';
-    } else {
-      blogItems.style.display = 'none';
-    }
-  });
   blogLi.appendChild(blogToggle);
-  blogLi.appendChild(blogItems);
   menuItems.appendChild(blogLi);
 
   const rightBlock = document.getElementById('right_block');
@@ -250,14 +222,4 @@ document.addEventListener('DOMContentLoaded', function() {
   subscribeButton.appendChild(document.createTextNode('Subscribe'));
   SubscribeSection.appendChild(subscribeButton);
   rightBlock.appendChild(SubscribeSection);
-
-  blogFiles.forEach(({ file, title }) => {
-    // Add menu item
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = `${file}`;
-    a.textContent = title;
-    li.appendChild(a);
-    blogItems.appendChild(li);
-  });
 });

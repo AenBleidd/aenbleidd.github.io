@@ -74,7 +74,7 @@ blog_posts = [
 
 previous_post = None
 for post in blog_posts:
-    file_path = f"{post['file']}.md"
+    file_path = f"md/{post['file']}.md"
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     html_content = markdown.markdown(content)
@@ -112,12 +112,21 @@ for post in blog_posts:
 last_blog_posts = blog_posts[-2:]
 with open('index.html', 'r', encoding='utf-8') as f:
     content = f.read()
-    with open(last_blog_posts[1]['file'] + '.md', 'r', encoding='utf-8') as f:
+    with open(f"md/{last_blog_posts[1]['file']}.md", 'r', encoding='utf-8') as f:
         md_content = f.read()
     html_content = markdown.markdown(md_content)
     content = re.sub(r'<!--BLOG REPLACE START-->.*<!--BLOG REPLACE END-->', f'<!--BLOG REPLACE START--><div id="blog_content">{html_content}</div><div id="previous_post_link"><a href="{last_blog_posts[0]["file"]}.html">Previous Post: {last_blog_posts[0]["title"]}</a></div><!--BLOG REPLACE END-->', content, flags=re.DOTALL)
     with open('index.html', 'w', encoding='utf-8') as f:
       f.write(content)
+
+with open('blog.html', 'r', encoding='utf-8') as f:
+    content = f.read()
+    html_content = "<ul>"
+    html_content += "".join([f'<li><a href="{post["file"]}.html">{post["file"]}:\t{post["title"]}</a></li>' for post in reversed(blog_posts)])
+    html_content += "</ul>"
+    content = re.sub(r'<!--BLOG REPLACE START-->.*<!--BLOG REPLACE END-->', f'<!--BLOG REPLACE START--><div id="blog_content">{html_content}</div><!--BLOG REPLACE END-->', content, flags=re.DOTALL)
+    with open('blog.html', 'w', encoding='utf-8') as f:
+        f.write(content)
 
 with open('rss.xml', 'w', encoding='utf-8') as f:
     f.write("""<?xml version="1.0" encoding="UTF-8"?>
@@ -141,10 +150,9 @@ with open('rss.xml', 'w', encoding='utf-8') as f:
     f.write('</feed>')
 
 with open('sitemap.xml', 'w', encoding='utf-8') as f:
-    f.write("""<?xml version='1.0' encoding='UTF-8'?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://aenbleidd.github.io/</loc>""")
-    f.write(f'<lastmod>{blog_posts[-1]["file"].replace(".", "-")}T00:00:00Z</lastmod></url>')
+    f.write("""<?xml version='1.0' encoding='UTF-8'?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">""")
+    f.write(f'<url><loc>https://aenbleidd.github.io/</loc><lastmod>{blog_posts[-1]["file"].replace(".", "-")}T00:00:00Z</lastmod></url>')
+    f.write(f'<url><loc>https://aenbleidd.github.io/blog.html</loc><lastmod>{blog_posts[-1]["file"].replace(".", "-")}T00:00:00Z</lastmod></url>')
     for post in reversed(blog_posts):
-        f.write(f'<url><loc>https://aenbleidd.github.io/{post['file']}.html</loc>')
-        f.write(f'<lastmod>{post["file"].replace(".", "-")}T00:00:00Z</lastmod>')
-        f.write('</url>')
+        f.write(f'<url><loc>https://aenbleidd.github.io/{post["file"]}.html</loc><lastmod>{post["file"].replace(".", "-")}T00:00:00Z</lastmod></url>')
     f.write('</urlset>')
