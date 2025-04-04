@@ -70,6 +70,12 @@ blog_posts = [
         'description': 'Read the monthly report for February 2025 to find more information about the future release plans.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, February 2025, release plans'
     },
+    {
+        'file': '2025.04.04',
+        'title': 'BOINC Development Status Report: March 2025',
+        'description': 'Read the monthly report for March 2025 to find more information about the upcoming release with BUDA applications support.',
+        'keywords': 'BOINC, development, Vitalii Koshura, updates, information, March 2025, upcoming release, BUDA, Docker, Podman, BOINC Central'
+    }
 ]
 
 previous_post = None
@@ -91,8 +97,8 @@ for post in blog_posts:
         f.write(f'<link rel="canonical" href="https://aenbleidd.github.io/{post["file"]}.html">')
         f.write(f'<title>{post["title"]}</title>')
         f.write("""<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
-<link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
+<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+<link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
