@@ -34,20 +34,22 @@
         <ul id="menu_items"></ul>
       </aside>
       <section id="main_content">
-        <!--BLOG REPLACE START--><div id="blog_content"><h1>BOINC Development Status Report: March 2025</h1>
+        <!--BLOG REPLACE START--><div id="blog_content"><h1>BOINC Development Status Report: April 2025</h1>
 <p align="center">
-  <img src="images/2025.04.04.png" alt="BUDA jobs batch on BOINC Central"/>
+  <img src="images/2025.05.11.png" alt="BUDA jobs batch on BOINC Central"/>
 </p>
 
-<p>The first quarter of 2025 is over, and despite the fact that we are a little bit behind the schedule, we are still on track to release the new version of BOINC soon.
-We took some additional time to finalize the support of the new <a href="2024.12.01.html">BUDA  functionality</a>, which is a new way of distributing science applications to our users.
-With the huge help of the <a href="https://lhcathomedev.cern.ch/lhcathome-dev/">LHC@Home Development Project</a> we were able to test the new functionality and fix some bugs that we found during the testing on Linux, MacOS and Windows platforms.</p>
-<p>To run the new <a href="2024.12.01.html">BUDA applications</a>, our users need to have <a href="2024.12.01.html">Docker or Podman</a> installed on their systems. While this is quite easy to do on Linux and MacOS, it requires additional steps on Windows to install WSL (Windows Subsystem for Linux). As we don't want to leave any users behind, we are preparing a detailed guide to assist with the installation process including the custom pre-configured image that has basically one-step installation that could be downloaded from <a href="https://github.com/BOINC/boinc-buda-runner-wsl/releases">GitHub</a>. The complete guide is already available in the <a href="https://github.com/BOINC/boinc/wiki/Installing-Docker">BOINC Wiki</a>.
-In future we plan to make it even simpler for our Windows users and integrate it into the BOINC installer.</p>
-<p>We know that Docker is more known as container technology, for our custom WSL image we chose Podman as as open-source alternative to Docker. Podman is a daemonless container engine for developing, managing, and running OCI containers on your Linux system. It is a drop-in replacement for Docker, which means that you can use the same commands and scripts that you would use with Docker. The main difference is that Podman does not require a daemon to run, which makes it more secure and easier to use in some cases.
-BOINC client itself detects both Docker and Podman installed, so as always our users have a choice of which one to use.</p>
-<p>We plan that this new <a href="2024.12.01.html">BUDA applications</a> will replace the current VirtualBox workflow in the future. The biggest advantage of it is the smaller and lighter applications that will not slow-down the host system so much as the current VirtualBox applications do (especially when running more than one instance of VirtualBox).</p>
-<p>We also have a first scientist on <a href="https://boinc.berkeley.edu/central/">BOINC Central</a> who is currently testing his application on the platform. We are looking forward to more scientists joining us and testing their applications on the platform.</p></div><div id="previous_post_link"><a href="2025.03.11.html">Previous Post: BOINC Development Status Report: February 2025</a></div><!--BLOG REPLACE END-->
+<p>In the <a href="2025.04.04.html">last report</a>, I wrote that we are a little bit behind the schedule, but we are still on track to release the new version of BOINC soon.
+Last month we made an alpha release 8.2.1 for Windows and 8.2.2 for Linux.
+The Linux version has a bigger version number because we had to fix some Linux specific bugs that were found during the testing.
+MacOs version is still in the works due to the MacOS specific issues with the new <a href="2024.12.01.html">BUDA functionality</a>.
+To be completely honest, Windows version that relies on WSL has a little issue as well, but it's not critical, and we are working on the fix.</p>
+<p>At the moment, new <a href="2024.12.01.html">BUDA functionality</a> is actively tested on the <a href="https://boinc.berkeley.edu/central/">BOINC Central</a> platform.
+We are happy to announce that we have a <a href="https://orunge.org/boolean-chains/">first scientist</a> who is currently testing his application on the platform.
+Even with the small number of users on BOINC Central, we already have around 10000 jobs successfully completed.
+We see a great potential in this new functionality, and we are looking forward to more scientists joining us and testing their applications on the platform.
+A great amount of fixes and improvements were made to the <a href="2024.12.01.html">BUDA functionality</a> during last month, that will be helpful for the scientists who are going to use it in the future.</p>
+<p>We plan to release the new version of BOINC in the next month, and we are working hard to make it happen.</p></div><div id="previous_post_link"><a href="2025.04.04.html">Previous Post: BOINC Development Status Report: March 2025</a></div><!--BLOG REPLACE END-->
       </section>
       <aside id="right_block" style="margin-left: 100px;"></aside>
     </div>
