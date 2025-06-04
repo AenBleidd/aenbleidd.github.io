@@ -82,6 +82,12 @@ blog_posts = [
         'description': 'Read the monthly report for April 2025 to find more information about the upcoming release with BUDA applications support.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, April 2025, upcoming release, BUDA, Docker, Podman, BOINC Central'
     },
+    {
+        'file': '2025.06.04',
+        'title': 'BOINC Development Status Report: May 2025',
+        'description': 'Read the monthly report for May 2025 to find more information about first milestone achieved by BOINC Central.',
+        'keywords': 'BOINC, development, Vitalii Koshura, updates, information, May 2025, BOINC Central'
+    }
 ]
 
 previous_post = None
