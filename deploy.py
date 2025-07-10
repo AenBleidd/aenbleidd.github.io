@@ -87,6 +87,12 @@ blog_posts = [
         'title': 'BOINC Development Status Report: May 2025',
         'description': 'Read the monthly report for May 2025 to find more information about first milestone achieved by BOINC Central.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, May 2025, BOINC Central'
+    },
+    {
+        'file': '2025.07.11',
+        'title': 'Blender application for BOINC Central',
+        'description': 'Read the information about the new upcoming Blender application for BOINC Central.',
+        'keywords': 'BOINC, development, Vitalii Koshura, BOINC Central, Blender'
     }
 ]
 

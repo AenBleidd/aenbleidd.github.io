@@ -2,10 +2,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title>Vitalii Koshura: Maintaining BOINC</title>
 <link href="https://aenbleidd.github.io/rss.xml" rel="self"/>
-<link href="https://aenbleidd.github.io/"/><updated>2025-06-04T00:00:00Z</updated><author>
+<link href="https://aenbleidd.github.io/"/><updated>2025-07-11T00:00:00Z</updated><author>
 <name>Vitalii Koshura</name>
 </author>
 <id>https://aenbleidd.github.io/</id><entry>
+<title>Blender application for BOINC Central</title>
+<link href="https://aenbleidd.github.io/2025.07.11.html"/>
+<id>https://aenbleidd.github.io/2025.07.11.html</id>
+<updated>2025-07-11T00:00:00Z</updated>
+<summary>Read the information about the new upcoming Blender application for BOINC Central.</summary>
+</entry><entry>
 <title>BOINC Development Status Report: May 2025</title>
 <link href="https://aenbleidd.github.io/2025.06.04.html"/>
 <id>https://aenbleidd.github.io/2025.06.04.html</id>
