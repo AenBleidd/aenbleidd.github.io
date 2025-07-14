@@ -122,7 +122,7 @@ for post in blog_posts:
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-RB9QYE55Z3');</script>
 <body>""")
-        f.write('<header><div class="container"><h1>Vitalii Koshura: Maintaining BOINC</h1></div></header>')
+        f.write(f'<header><div class="container"><h1>Vitalii Koshura: Maintaining BOINC / {post["title"]}</h1></div></header>')
         f.write("""<div class="container"><aside id="menu"><ul id="menu_items"></ul></aside><section id="main_content"><div id="blog_post_single">""")
         f.write(html_content)
         f.write('</div>')
@@ -140,7 +140,7 @@ with open('index.html', 'r', encoding='utf-8') as f:
     with open(f"md/{last_blog_posts[1]['file']}.md", 'r', encoding='utf-8') as f:
         md_content = f.read()
     html_content = markdown.markdown(md_content)
-    content = re.sub(r'<!--BLOG REPLACE START-->.*<!--BLOG REPLACE END-->', f'<!--BLOG REPLACE START--><div id="blog_content">{html_content}</div><div id="previous_post_link"><a href="{last_blog_posts[0]["file"]}.html">Previous Post: {last_blog_posts[0]["title"]}</a></div><!--BLOG REPLACE END-->', content, flags=re.DOTALL)
+    content = re.sub(r'<!--BLOG REPLACE START-->.*<!--BLOG REPLACE END-->', f'<!--BLOG REPLACE START--><div id="blog_content"><h1>{last_blog_posts[1]["title"]}</h1>{html_content}</div><div id="previous_post_link"><a href="{last_blog_posts[0]["file"]}.html">Previous Post: {last_blog_posts[0]["title"]}</a></div><!--BLOG REPLACE END-->', content, flags=re.DOTALL)
     with open('index.html', 'w', encoding='utf-8') as f:
       f.write(content)
 
