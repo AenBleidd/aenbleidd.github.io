@@ -182,3 +182,9 @@ with open('sitemap.xml', 'w', encoding='utf-8') as f:
     for post in reversed(blog_posts):
         f.write(f'\t<url>\n\t\t<loc>https://aenbleidd.github.io/{post["file"]}.html</loc>\n\t\t<lastmod>{post["file"].replace(".", "-")}T00:00:00Z</lastmod>\n\t</url>\n')
     f.write('</urlset>')
+
+with open('sitemap.txt', 'w', encoding='utf-8') as f:
+    f.write('https://aenbleidd.github.io/\n')
+    f.write('https://aenbleidd.github.io/blog.html\n')
+    for post in blog_posts:
+        f.write(f'https://aenbleidd.github.io/{post["file"]}.html\n')
