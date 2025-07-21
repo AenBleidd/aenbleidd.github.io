@@ -175,9 +175,10 @@ with open('rss.xml', 'w', encoding='utf-8') as f:
     f.write('</feed>')
 
 with open('sitemap.xml', 'w', encoding='utf-8') as f:
-    f.write("""<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">""")
-    f.write(f'<url><loc>https://aenbleidd.github.io/</loc><lastmod>{blog_posts[-1]["file"].replace(".", "-")}T00:00:00Z</lastmod></url>')
-    f.write(f'<url><loc>https://aenbleidd.github.io/blog.html</loc><lastmod>{blog_posts[-1]["file"].replace(".", "-")}T00:00:00Z</lastmod></url>')
+    f.write("""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n""")
+    f.write(f'\t<url>\n\t\t<loc>https://aenbleidd.github.io/</loc>\n\t\t<lastmod>{blog_posts[-1]["file"].replace(".", "-")}T00:00:00Z</lastmod>\n\t</url>\n')
+    f.write(f'\t<url>\n\t\t<loc>https://aenbleidd.github.io/blog.html</loc>\n\t\t<lastmod>{blog_posts[-1]["file"].replace(".", "-")}T00:00:00Z</lastmod>\n\t</url>\n')
     for post in reversed(blog_posts):
-        f.write(f'<url><loc>https://aenbleidd.github.io/{post["file"]}.html</loc><lastmod>{post["file"].replace(".", "-")}T00:00:00Z</lastmod></url>')
+        f.write(f'\t<url>\n\t\t<loc>https://aenbleidd.github.io/{post["file"]}.html</loc>\n\t\t<lastmod>{post["file"].replace(".", "-")}T00:00:00Z</lastmod>\n\t</url>\n')
     f.write('</urlset>')
