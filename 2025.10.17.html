@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="fediverse:creator" content="@AenBleidd@fosstodon.org"><meta name="description" content="Read the information about the new BOINC WSL image installer for BUDA jobs and some other minor updates."><meta name="keywords" content="BOINC, development, Vitalii Koshura, BOINC Central, WSL, BUDA"><link rel="canonical" href="https://aenbleidd.github.io/2025.10.17.html"><title>BOINC WSL image installer and other updates</title><link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+<link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-RB9QYE55Z3');</script>
+<body><header><div class="container"><h1>Vitalii Koshura: Maintaining BOINC / BOINC WSL image installer and other updates</h1></div></header><div class="container"><aside id="menu"><ul id="menu_items"></ul></aside><section id="main_content"><div id="blog_post_single"><p align="center">
+  <img src="images/2025.10.17.jpg" alt="Fun facts about Germany: no fun in Germany, get back to work!"/>
+</p>
+
+<p>The <a href="2025.07.11.html">last post</a> was written more than three months ago. I'd like to say that a lot has happened since then, but in reality, not much has happened. Yet I feel the time has come for a new post.</p>
+<p>Here are the updates regarding BOINC development.</p>
+<p>During the last few months, we worked very hard to bring the <a href="2024.12.01.html">BUDA functionality</a> to macOS. Surprisingly, it took significantly more time than we expected. But it looks like we are close to the finish line, and a release for public testing should be available soon.</p>
+<p>As it was already mentioned, on Windows it's required to have an installed and properly configured WSL image to run BUDA applications. Unfortunately, for an average user, it's quite difficult to do this correctly. That is why we have created an installer that does everything automatically. Users just need to download and run it. For now, this installer is available on <a href="https://github.com/BOINC/boinc-buda-runner-wsl-installer/releases/tag/v2.1.0">GitHub</a> only, but we plan to add it to the BOINC installer later as well.</p>
+<p>Meanwhile, on the <a href="https://boinc.berkeley.edu/central">BOINC Central</a> project, we have a <a href="2025.05.11.html">running research</a> with around 20,000 jobs processed every day. I would like to thank all volunteers who contributed to this project.</p>
+<p>At the moment, this is the only active research on BOINC Central. However, when we started with it, we implemented the Autodock Vina application. It is a molecular docking and virtual screening program that is widely used in drug discovery. While this particular software is quite popular in academic circles, BOINC Central itself is not very well known. That is why I made several videos and an article that explain how to use BOINC Central for virtual screening with Autodock Vina. You can find them in this <a href="https://medium.com/@lestat.de.lionkur/molecular-docking-with-autodock4-vina-and-vinardo-on-boinc-central-7117645d0551">tutorial</a>.
+We continue to work on this project and plan to add more applications in the future.</p></div><div id="previous_post_link"><a href="2025.07.11.html">Previous Post: Blender application for BOINC Central</a></div></section><aside id="right_block" style="margin-left: 100px;"></aside></div>
+<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">try {var pageTracker = _gat._getTracker("UA-64184707-1");pageTracker._trackPageview();} catch(err) {}</script><script src="../javascripts/main.js" type="module"></script><footer><div class="container"><p>Vitalii Koshura © 2025</p></div></footer></body></html>

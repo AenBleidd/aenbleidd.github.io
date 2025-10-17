@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # pip install markdown
 
 import markdown
@@ -93,6 +94,12 @@ blog_posts = [
         'title': 'Blender application for BOINC Central',
         'description': 'Read the information about the new upcoming Blender application for BOINC Central.',
         'keywords': 'BOINC, development, Vitalii Koshura, BOINC Central, Blender'
+    },
+    {
+        'file': '2025.10.17',
+        'title': 'BOINC WSL image installer and other updates',
+        'description': 'Read the information about the new BOINC WSL image installer for BUDA jobs and some other minor updates.',
+        'keywords': 'BOINC, development, Vitalii Koshura, BOINC Central, WSL, BUDA'
     }
 ]
 
