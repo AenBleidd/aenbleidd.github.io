@@ -7,20 +7,6 @@ const photoList = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-  const menuItems = document.getElementById('menu_items');
-  const li = document.createElement('li');
-  const aHome = document.createElement('a');
-  aHome.href = 'index.html';
-  aHome.textContent = 'Home';
-  li.appendChild(aHome);
-  menuItems.appendChild(li);
-  const blogLi = document.createElement('li');
-  const blogToggle = document.createElement('a');
-  blogToggle.href = 'blog.html';
-  blogToggle.textContent = 'Blog';
-  blogLi.appendChild(blogToggle);
-  menuItems.appendChild(blogLi);
-
   const rightBlock = document.getElementById('right_block');
 
   const randomPhotoContainer = document.createElement('div');

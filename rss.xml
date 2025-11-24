@@ -101,4 +101,10 @@
 <id>https://aenbleidd.github.io/2023.10.14.html</id>
 <updated>2023-10-14T00:00:00Z</updated>
 <summary>Find more information about the purpose of this blog about BOINC development.</summary>
+</entry><entry>
+<title>Molecular docking with Autodock4, Vina and Vinardo on BOINC Central</title>
+<link href="https://aenbleidd.github.io/boinc_central_autodock_vina_vinardo_raccoon2.html"/>
+<id>https://aenbleidd.github.io/boinc_central_autodock_vina_vinardo_raccoon2.html</id>
+<updated>2025-11-24T00:00:00Z</updated>
+<summary>This tutorial explains how to perform molecular docking using AutoDock4, Vina, and Vinardo on BOINC Central.</summary>
 </entry></feed>

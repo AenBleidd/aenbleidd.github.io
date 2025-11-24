@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="fediverse:creator" content="@AenBleidd@fosstodon.org"><meta name="description" content="This tutorial explains how to perform molecular docking using AutoDock4, Vina, and Vinardo on BOINC Central."><meta name="keywords" content="BOINC, Vina, Vinardo, AutoDock4, Raccoon2, molecular docking"><link rel="canonical" href="https://aenbleidd.github.io/boinc_central_autodock_vina_vinardo_raccoon2.html"><title>Molecular docking with Autodock4, Vina and Vinardo on BOINC Central</title><link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+<link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-RB9QYE55Z3');</script>
+<body><header><div class="container"><h1>Vitalii Koshura: Maintaining BOINC / Molecular docking with Autodock4, Vina and Vinardo on BOINC Central</h1></div></header><div class="container"><aside id="menu"><ul id="menu_items"><li><a href = 'index.html'>Home</a></li><li><a href = 'blog.html'>Blog</a></li><li><a href = 'tutorials.html'>Tutorials</a></li></ul></aside><section id="main_content"><div id="blog_post_single"><h1>Molecular docking with Autodock4, Vina and Vinardo on BOINC Central</h1>
+<p>This page explains how to perform molecular docking using <a href="https://autodock.scripps.edu/">AutoDock4</a>, <a href="https://vina.scripps.edu/">Vina</a>, and <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0155183">Vinardo</a> on <a href="https://boinc.berkeley.edu/central/">BOINC Central</a>.</p>
+<ol>
+<li><a href="#setting-up-boinc-central-for-molecular-docking">Setting Up BOINC Central for Molecular Docking</a></li>
+<li><a href="#submitting-an-autodock4-job">Submitting AutoDock4 Jobs</a></li>
+<li><a href="#submitting-a-vina-job">Submitting Vina Jobs</a></li>
+<li><a href="#submitting-a-vinardo-job">Submitting Vinardo Jobs</a></li>
+<li><a href="#review-submitted-jobs">Review Submitted Jobs</a></li>
+<li><a href="#submitting-vina-jobs-using-raccoon2">Submitting Vina Jobs using Raccoon2</a></li>
+<li><a href="#contact">Contact</a></li>
+</ol>
+<p>We describe a web-based job submission interface.
+For Vina, you can also use <a href="Submitting-Vina-Jobs-using-Raccoon2">Raccoon2</a>.</p>
+<h2>Setting Up BOINC Central for Molecular Docking</h2>
+<ul>
+<li><strong>Create an Account</strong>: Visit the <a href="https://boinc.berkeley.edu/central/signup.php">BOINC Central website</a> and create a free account.
+This will allow you to access the platform and submit your molecular docking tasks.
+You will be asked to provide some additional information, such as the research you are doing, that allows us to filter out spam accounts.
+Every request is manually reviewed, so please be patient if your account is not approved immediately.</li>
+<li><strong>Select a molecular docking application</strong>: After logging in, navigate to the <a href="https://boinc.berkeley.edu/central/submit.php">"Job submission"</a> section and select one of the available molecular docking applications: AutoDock4, Vina, or Vinardo.
+Each application has its own strengths and is suitable for different types of docking tasks.</li>
+</ul>
+<p align="center">
+  <img src="images/submit.jobs.png" alt="Submit jobs on BOINC Central"/>
+</p>
+
+<h2>Batches of jobs</h2>
+<p>BOINC Central is designed to run 'batches' of jobs.
+A batch can contain a single job, or thousands of jobs.</p>
+<p>You submit docking jobs to BOINC Central in batches.
+For each submission, you supply two directories of files:</p>
+<ul>
+<li>A directory of 'ligand' files</li>
+<li>A directory of 'receptor' (or in the case of Autodock4, 'map') files.</li>
+</ul>
+<p>A job is created for each combination of a ligand file and a receptor file.</p>
+<h2>Submitting AutoDock4 jobs</h2>
+<p><strong>Watch the video tutorial</strong></p>
+<p align="center">
+  <iframe allowfullscreen="" class="BLOG_video_class" height="416" src="https://www.youtube.com/embed/NJ8sxnipMUs" width="501" youtube-src-id="NJ8sxnipMUs"/></iframe>
+</p>
+
+<ul>
+<li><strong>Prepare Input Files</strong>: Prepare a zip archive with receptor maps and a zip archive with ligand files.
+The receptor maps should be in the format required by AutoDock4:
+for each map, a .pdbqt file,
+and possibly additional files ('.map', '.glg', '.gpf', '.fld', '.xyz')
+with the same base name.
+The ligand files should be in PDBQT format.
+Example .zip files:</li>
+</ul>
+<p><a href="https://github.com/BOINC/boinc-autodock-vina/wiki/samples/ad4/ad4_receptor_maps.zip">Receptor maps</a></p>
+<p><a href="https://github.com/BOINC/boinc-autodock-vina/wiki/samples/ad4/ad4_ligand.zip">Ligand files</a></p>
+<p align="center">
+    <img src="images/ad4_input_files.png" alt="Input files for AutoDock4"/>
+  </p>
+<ul>
+<li><strong>Upload Input Files</strong>: In the <a href="https://boinc.berkeley.edu/central/sandbox.php">"Job submission"-&gt;"File sandbox"</a> section, upload zip files containing your receptor maps and ligand files.</li>
+<li><strong>Submit the Job</strong>: Go to the <a href="https://boinc.berkeley.edu/central/submit.php">"Job submission"-&gt;"Submit jobs"</a> section, select AutoDock, and fill in the required fields:</li>
+<li><strong>Maps</strong>: Select the zip file containing your receptor maps.</li>
+<li><strong>Ligands</strong>: Select the zip file containing your ligand files.</li>
+</ul>
+<p>All other fields can be left as default. Click the "OK" button to start the docking job.</p>
+<p align="center">
+  <img src="images/ad4_submit_page.png" alt="Submit AutoDock4 job on BOINC Central"/>
+</p>
+
+<h2>Submitting a Vina Job</h2>
+<p><strong>Watch the video tutorial</strong></p>
+<p align="center">
+  <iframe allowfullscreen="" class="BLOG_video_class" height="416" src="https://www.youtube.com/embed/ypBh-Sw_jTg"
+    width="501" youtube-src-id="ypBh-Sw_jTg"/></iframe>
+</p>
+
+<ul>
+<li><strong>Prepare Input Files</strong>: Prepare a zip archive with receptor maps and a zip archive with ligand files.
+The receptor maps should be in the format required by Vina,
+and the ligand files should be in PDBQT format.
+Here are the example files you can use:</li>
+</ul>
+<p><a href="https://github.com/BOINC/boinc-autodock-vina/wiki/samples/vina/vina_receptor.zip">Receptor maps</a></p>
+<p><a href="https://github.com/BOINC/boinc-autodock-vina/wiki/samples/vina/vina_ligand.zip">Ligand files</a></p>
+<p align="center">
+    <img src="images/vina_input_files.png" alt="Input files for Vina"/>
+  </p>
+
+<ul>
+<li><strong>Upload Input Files</strong>: In the <a href="https://boinc.berkeley.edu/central/sandbox.php">"Job submission"-&gt;"File sandbox"</a> section,
+upload zip files containing your receptor and ligand files.</li>
+<li><strong>Submit the Job</strong>: Go to the <a href="https://boinc.berkeley.edu/central/submit.php">"Job submission"-&gt;"Submit jobs"</a> section,
+select Vina, and fill in the required fields:</li>
+<li><strong>Receptor</strong>: Select the zip file containing your receptor maps.</li>
+<li><strong>Ligands</strong>: Select the zip file containing your ligand files.</li>
+<li><strong>Center</strong>: Specify the center of the docking box (Angstrom) in the format <code>x,y,z</code> (e.g., <code>0,0,0</code>).</li>
+<li><strong>Size</strong>: Specify the size of the docking box (Angstrom) in the format <code>x,y,z</code> (e.g., <code>20,20,20</code>).</li>
+</ul>
+<p>All other fields can be left as default.
+Click the "OK" button to start the docking job.</p>
+<p align="center">
+  <img src="images/vina_submit_page.png" alt="Submit Vina job on BOINC Central"/>
+</p>
+
+<h2>Submitting a Vinardo Job</h2>
+<p><strong>Watch the video tutorial</strong></p>
+<p align="center">
+  <iframe allowfullscreen="" class="BLOG_video_class" height="416" src="https://www.youtube.com/embed/dGiZbEje-Ok"
+    width="501" youtube-src-id="dGiZbEje-Ok"/></iframe>
+</p>
+
+<ul>
+<li><strong>Prepare Input Files</strong>: Prepare zip archive with receptor maps and zip archive with ligand files.
+The receptor maps should be in the format required by Vinardo, and the ligand files should be in PDBQT format.
+Here are the example files you can use:</li>
+</ul>
+<p><a href="https://github.com/BOINC/boinc-autodock-vina/wiki/samples/vinardo/vinardo_receptor.zip">Receptor maps</a></p>
+<p><a href="https://github.com/BOINC/boinc-autodock-vina/wiki/samples/vinardo/vinardo_ligand.zip">Ligand files</a></p>
+<p align="center">
+    <img src="images/vinardo_input_files.png" alt="Input files for Vinardo"/>
+  </p>
+
+<ul>
+<li><strong>Upload Input Files</strong>: In the <a href="https://boinc.berkeley.edu/central/sandbox.php">"Job submission"-&gt;"File sandbox"</a> section, upload zip files containing your receptor and ligand files.</li>
+<li><strong>Submit the Job</strong>: Go to the <a href="https://boinc.berkeley.edu/central/submit.php">"Job submission"-&gt;"Submit jobs"</a> section, select Vinardo, and fill in the required fields:</li>
+<li><strong>Receptor</strong>: Select the zip file containing your receptor maps.</li>
+<li><strong>Ligands</strong>: Select the zip file containing your ligand files.</li>
+<li><strong>Center</strong>: Specify the center of the docking box (Angstrom) in the format <code>x,y,z</code> (e.g., <code>0,0,0</code>).</li>
+<li><strong>Size</strong>: Specify the size of the docking box (Angstrom) in the format <code>x,y,z</code> (e.g., <code>20,20,20</code>).</li>
+</ul>
+<p>All other fields can be left as default.
+Click the "OK" button to start the docking job.</p>
+<p align="center">
+     <img src="images/vinardo_submit_page.png" alt="Submit Vinardo job on BOINC Central"/>
+   </p>
+
+<h2>Review Submitted Jobs</h2>
+<p>After submitting your jobs,
+you can monitor their progress in the <a href="https://boinc.berkeley.edu/central/submit.php?action=status">"Job submission-&gt;Job status"</a> section.
+Here, you can see the status of your jobs,
+including whether they are running, completed, or failed.
+You can also view the results of completed jobs and download the output files.
+After you got the results and saved them locally, you can retire the batch.
+This will remove the batch and all jobs within it, including the results.</p>
+<p align="center">
+  <img src="images/job_status.png" alt="Job status on BOINC Central"/>
+</p>
+
+<h2>Submitting Vina Jobs using Raccoon2</h2>
+<p>If you prefer to use a graphical interface for submitting Vina jobs,
+you can use <a href="https://autodock.scripps.edu/resources/raccoon2/">Raccoon2</a>.
+Raccoon2 is a user-friendly tool that simplifies the process
+of preparing and reviewing Vina receptors and ligands.
+Raccoon2 does not support submitting jobs to BOINC Central directly,
+but for your convenience we have made a plugin that allows you to submit Vina jobs to BOINC Central directly from Raccoon2.
+You can find the plugin <a href="https://github.com/BOINC/Raccoon2_BOINC_Plugin">here</a>.</p>
+<p><strong>Watch the video tutorial</strong></p>
+<p align="center">
+  <iframe allowfullscreen="" class="BLOG_video_class" height="416" src="https://www.youtube.com/embed/g7jago5-TvU"
+    width="501" youtube-src-id="g7jago5-TvU"/></iframe>
+</p>
+
+<h3>Installation</h3>
+<p>To install the plugin, you need to have Raccoon2 1.5.7 installed
+(could be taken from <a href="https://ccsb.scripps.edu/mgltools/downloads/">here</a>)
+and plugin downloaded from the
+<a href="https://github.com/BOINC/Raccoon2_BOINC_Plugin/releases/tag/v1.0.4">releases</a></p>
+<p>Then, navigate to the <code>MGLTOOLS_FOLDER</code> folder,
+and put <code>raccoon2_boinc_installer.py</code> there,
+where <code>MGLTOOLS_FOLDER</code> is the folder where MGLTools is installed.</p>
+<p>Finally, you can install the plugin using the following command:</p>
+<h4>Linux/Mac:</h4>
+<p><code>bash
+./bin/pythonsh raccoon2_boinc_installer.py install</code></p>
+<h4>Windows:</h4>
+<p>Before running the command, you need to start <code>cmd</code> as an administrator,
+then navigate to the <code>MGLTOOLS_FOLDER</code> folder.</p>
+<p><code>bash
+python.exe raccoon2_boinc_installer.py install</code></p>
+<p>where <code>MGLTOOLS_FOLDER</code> is the folder where MGLTools is installed.</p>
+<h3>Usage</h3>
+<ul>
+<li><strong>Open Raccoon2</strong>: Launch Raccoon2 and authenticate with your BOINC Central account.</li>
+</ul>
+<p align="center">
+  <img src="https://github.com/BOINC/Raccoon2_BOINC_Plugin/raw/master/plugin.png" alt="Raccoon2 with BOINC Central plugin installed"/>
+</p>
+
+<ul>
+<li><strong>Prepare Ligands</strong>: You can use the sample ligands provided <a href="https://github.com/BOINC/boinc-autodock-vina/wiki/samples/raccoon2/1iep_ligand.zip">here</a>.</li>
+</ul>
+<p align="center">
+  <img src="images/raccoon2_ligands.png" alt="Raccoon2 ligand preparation"/>
+</p>
+
+<ul>
+<li><strong>Prepare Receptors</strong>: You can use the sample receptors provided <a href="https://github.com/BOINC/boinc-autodock-vina/wiki/samples/raccoon2/1iep_receptor.zip">here</a>.</li>
+</ul>
+<p align="center">
+  <img src="images/raccoon2_receptors.png" alt="Raccoon2 receptor preparation"/>
+</p>
+
+<ul>
+<li><strong>Configure Docking Parameters</strong>: Set the docking parameters, such as the center and size of the docking box.</li>
+</ul>
+<p align="center">
+  <img src="images/raccoon2_config.png" alt="Raccoon2 docking parameters"/>
+</p>
+
+<ul>
+<li><strong>Submit Job</strong>: Click the "Submit" button on the Job manager tab to submit the job to BOINC Central.
+All your submitted jobs will be listed in the Job manager tab,
+and you can monitor their status.</li>
+</ul>
+<p align="center">
+  <img src="images/raccoon2_job_manager.png" alt="Raccoon2 job submission page to BOINC Central"/>
+</p>
+
+<ul>
+<li><strong>Review Results</strong>: After the job is completed,
+you can download the results from the Job manager tab in Raccoon2 and review them later on the Analysis tab.</li>
+</ul>
+<p align="center">
+  <img src="images/raccoon2_analysis.png" alt="Raccoon2 job results analysis"/>
+</p>
+
+<h2>Contact</h2>
+<p>If you have any questions or need assistance with BOINC Central,
+you can contact us via the
+<a href="https://boinc.berkeley.edu/central/forum_index.php">BOINC Central forum</a>
+or by <a href="https://boinc.berkeley.edu/anderson/">email</a>.
+In case of any issues,
+please report them on the
+<a href="https://github.com/BOINC/boinc-apps/issues">GitHub repository</a>.</p></div>
