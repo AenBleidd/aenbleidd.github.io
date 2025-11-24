@@ -2,14 +2,6 @@
 
 This page explains how to perform molecular docking using [AutoDock4](https://autodock.scripps.edu/), [Vina](https://vina.scripps.edu/), and [Vinardo](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0155183) on [BOINC Central](https://boinc.berkeley.edu/central/).
 
-1. [Setting Up BOINC Central for Molecular Docking](#setting-up-boinc-central-for-molecular-docking)
-1. [Submitting AutoDock4 Jobs](#submitting-an-autodock4-job)
-1. [Submitting Vina Jobs](#submitting-a-vina-job)
-1. [Submitting Vinardo Jobs](#submitting-a-vinardo-job)
-1. [Review Submitted Jobs](#review-submitted-jobs)
-1. [Submitting Vina Jobs using Raccoon2](#submitting-vina-jobs-using-raccoon2)
-1. [Contact](#contact)
-
 We describe a web-based job submission interface.
 For Vina, you can also use [Raccoon2](Submitting-Vina-Jobs-using-Raccoon2).
 
