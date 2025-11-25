@@ -1,5 +1,3 @@
-# Molecular docking with Autodock4, Vina and Vinardo on BOINC Central
-
 This page explains how to perform molecular docking using [AutoDock4](https://autodock.scripps.edu/), [Vina](https://vina.scripps.edu/), and [Vinardo](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0155183) on [BOINC Central](https://boinc.berkeley.edu/central/).
 
 We describe a web-based job submission interface.
