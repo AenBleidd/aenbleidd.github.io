@@ -11,7 +11,8 @@ blog_posts = [
         'description': 'This tutorial explains how to perform molecular docking using AutoDock4, Vina, and Vinardo on BOINC Central.',
         'keywords': 'BOINC, Vina, Vinardo, AutoDock4, Raccoon2, molecular docking',
         'type': 'tutorial',
-        'date': '2025.11.24'
+        'date': '2025.11.24',
+        'image': 'images/tutorial_autodock_vina_preview.png'
     },
     {
         'file': '2023.10.14',
@@ -19,7 +20,8 @@ blog_posts = [
         'description': 'Find more information about the purpose of this blog about BOINC development.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information',
         'type': 'blog',
-        'date': '2023.10.14'
+        'date': '2023.10.14',
+        'image': 'images/2023.10.14.jpg'
     },
     {
         'file': '2024.02.28',
@@ -27,7 +29,8 @@ blog_posts = [
         'description': 'Find more details about the purpose of vanilla BOINC packages for DEB and RPM based Linux distributions.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, Linux, DEB, RPM',
         'type': 'blog',
-        'date': '2024.02.28'
+        'date': '2024.02.28',
+        'image': 'images/boinc_tux.png'
     },
     {
         'file': '2024.03.16',
@@ -35,7 +38,8 @@ blog_posts = [
         'description': 'Find more information about Android GPUs and their detection by BOINC client.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, Android, GPU',
         'type': 'blog',
-        'date': '2024.03.16'
+        'date': '2024.03.16',
+        'image': 'images/boinc_android.png'
     },
     {
         'file': '2024.03.18',
@@ -43,7 +47,8 @@ blog_posts = [
         'description': 'Find more information about the new major release of BOINC.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, release',
         'type': 'blog',
-        'date': '2024.03.18'
+        'date': '2024.03.18',
+        'image': 'images/boinc_7_8.png'
     },
     {
         'file': '2024.04.01',
@@ -51,7 +56,8 @@ blog_posts = [
         'description': 'Find more information about the liblzma vulnerability and its impact on BOINC.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, liblzma, vulnerability',
         'type': 'blog',
-        'date': '2024.04.01'
+        'date': '2024.04.01',
+        'image': 'images/74f1822a50ba58c7.jpeg'
     },
     {
         'file': '2024.10.13',
@@ -59,7 +65,8 @@ blog_posts = [
         'description': 'Find more information about the BOINC Workshop 2024 hosted by CERN in Geneva, Switzerland.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, workshop, CERN, Geneva',
         'type': 'blog',
-        'date': '2024.10.13'
+        'date': '2024.10.13',
+        'image': 'images/IMG_3537.JPG'
     },
     {
         'file': '2024.11.02',
@@ -67,7 +74,8 @@ blog_posts = [
         'description': 'Read the monthly report for October 2024 to find more information about the WSL and Docker features in the upcoming release of BOINC.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, WSL, Docker, release',
         'type': 'blog',
-        'date': '2024.11.02'
+        'date': '2024.11.02',
+        'image': 'images/IMG_3682.jpg'
     },
     {
         'file': '2024.12.01',
@@ -75,7 +83,8 @@ blog_posts = [
         'description': 'Read the monthly report for November 2024 to find more information about the Windows installer and BUDA: the new Docker based type of BOINC applications.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, Windows installer, BUDA, Docker, release',
         'type': 'blog',
-        'date': '2024.12.01'
+        'date': '2024.12.01',
+        'image': 'images/Statistics_2024.png'
     },
     {
         'file': '2025.01.01',
@@ -83,7 +92,8 @@ blog_posts = [
         'description': 'Read the monthly report for December 2024 to find more information about the 2024 year recap.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, 2024 recap',
         'type': 'blog',
-        'date': '2025.01.01'
+        'date': '2025.01.01',
+        'image': 'images/2025.01.01.png'
     },
     {
         'file': '2025.02.02',
@@ -91,7 +101,8 @@ blog_posts = [
         'description': 'Read the monthly report for January 2025 to find more information about the future release plans.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, January 2025, release plans',
         'type': 'blog',
-        'date': '2025.02.02'
+        'date': '2025.02.02',
+        'image': 'images/IMG_3711.jpg'
     },
     {
         'file': '2025.03.11',
@@ -99,7 +110,8 @@ blog_posts = [
         'description': 'Read the monthly report for February 2025 to find more information about the future release plans.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, February 2025, release plans',
         'type': 'blog',
-        'date': '2025.03.11'
+        'date': '2025.03.11',
+        'image': 'images/2025.03.11.png'
     },
     {
         'file': '2025.04.04',
@@ -107,7 +119,8 @@ blog_posts = [
         'description': 'Read the monthly report for March 2025 to find more information about the upcoming release with BUDA applications support.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, March 2025, upcoming release, BUDA, Docker, Podman, BOINC Central',
         'type': 'blog',
-        'date': '2025.04.04'
+        'date': '2025.04.04',
+        'image': 'images/2025.04.04.png'
     },
     {
         'file': '2025.05.11',
@@ -115,7 +128,8 @@ blog_posts = [
         'description': 'Read the monthly report for April 2025 to find more information about the upcoming release with BUDA applications support.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, April 2025, upcoming release, BUDA, Docker, Podman, BOINC Central',
         'type': 'blog',
-        'date': '2025.05.11'
+        'date': '2025.05.11',
+        'image': 'images/2025.05.11.png'
     },
     {
         'file': '2025.06.04',
@@ -123,7 +137,8 @@ blog_posts = [
         'description': 'Read the monthly report for May 2025 to find more information about first milestone achieved by BOINC Central.',
         'keywords': 'BOINC, development, Vitalii Koshura, updates, information, May 2025, BOINC Central',
         'type': 'blog',
-        'date': '2025.06.04'
+        'date': '2025.06.04',
+        'image': 'images/2025.06.04.png'
     },
     {
         'file': '2025.07.11',
@@ -131,7 +146,8 @@ blog_posts = [
         'description': 'Read the information about the new upcoming Blender application for BOINC Central.',
         'keywords': 'BOINC, development, Vitalii Koshura, BOINC Central, Blender',
         'type': 'blog',
-        'date': '2025.07.11'
+        'date': '2025.07.11',
+        'image': 'images/2025.07.11.jpeg'
     },
     {
         'file': '2025.10.17',
@@ -139,7 +155,8 @@ blog_posts = [
         'description': 'Read the information about the new BOINC WSL image installer for BUDA jobs and some other minor updates.',
         'keywords': 'BOINC, development, Vitalii Koshura, BOINC Central, WSL, BUDA',
         'type': 'blog',
-        'date': '2025.10.17'
+        'date': '2025.10.17',
+        'image': 'images/2025.10.17.png'
     }
 ]
 
@@ -154,11 +171,15 @@ for post in blog_posts:
 <html lang="en">
 <head>
 <meta charset='utf-8'>
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="fediverse:creator" content="@AenBleidd@fosstodon.org">""")
         f.write(f'<meta name="description" content="{post["description"]}">')
         f.write(f'<meta name="keywords" content="{post["keywords"]}">')
+        f.write(f'<meta propery="og:title" content="{post["title"]}">')
+        f.write(f'<meta propery="og:description" content="{post["description"]}">')
+        f.write(f'<meta propery="og:type" content="website">')
+        f.write(f'<meta propery="og:url" content="https://aenbleidd.github.io/{post["file"]}.html">')
+        f.write(f'<meta propery="og:image" content="https://aenbleidd.github.io/{post["image"]}">')
         f.write(f'<link rel="canonical" href="https://aenbleidd.github.io/{post["file"]}.html">')
         f.write(f'<title>{post["title"]}</title>')
         f.write("""<link rel="icon" type="image/x-icon" href="favicon.ico">
