@@ -255,8 +255,9 @@ with open('rss.xml', 'w', encoding='utf-8') as f:
 with open('sitemap.xml', 'w', encoding='utf-8') as f:
     f.write("""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n""")
-    f.write(f'\t<url>\n\t\t<loc>https://aenbleidd.github.io/</loc>\n\t\t<lastmod>{blog_posts[-1]["file"].replace(".", "-")}T00:00:00Z</lastmod>\n\t</url>\n')
-    f.write(f'\t<url>\n\t\t<loc>https://aenbleidd.github.io/blog.html</loc>\n\t\t<lastmod>{blog_posts[-1]["file"].replace(".", "-")}T00:00:00Z</lastmod>\n\t</url>\n')
+    f.write(f'\t<url>\n\t\t<loc>https://aenbleidd.github.io/</loc>\n\t\t<lastmod>{max([post['date'] for post in blog_posts if post['type'] == 'blog']).replace('.', '-')}T00:00:00Z</lastmod>\n\t</url>\n')
+    f.write(f'\t<url>\n\t\t<loc>https://aenbleidd.github.io/blog.html</loc>\n\t\t<lastmod>{max([post['date'] for post in blog_posts if post['type'] == 'blog']).replace('.', '-')}T00:00:00Z</lastmod>\n\t</url>\n')
+    f.write(f'\t<url>\n\t\t<loc>https://aenbleidd.github.io/tutorials.html</loc>\n\t\t<lastmod>{max([post['date'] for post in blog_posts if post['type'] == 'tutorial']).replace('.', '-')}T00:00:00Z</lastmod>\n\t</url>\n')
     for post in reversed(blog_posts):
         f.write(f'\t<url>\n\t\t<loc>https://aenbleidd.github.io/{post["file"]}.html</loc>\n\t\t<lastmod>{post["date"].replace('.', '-')}T00:00:00Z</lastmod>\n\t</url>\n')
     f.write('</urlset>')
@@ -264,5 +265,6 @@ with open('sitemap.xml', 'w', encoding='utf-8') as f:
 with open('sitemap.txt', 'w', encoding='utf-8') as f:
     f.write('https://aenbleidd.github.io/\n')
     f.write('https://aenbleidd.github.io/blog.html\n')
+    f.write('https://aenbleidd.github.io/tutorials.html\n')
     for post in blog_posts:
         f.write(f'https://aenbleidd.github.io/{post["file"]}.html\n')
