@@ -197,7 +197,7 @@ for post in blog_posts:
             if previous_post and post['type'] == 'blog':
                 f.write(f'<div id="previous_post_link"><a href="{previous_post["file"]}.html">Previous Post: {previous_post["title"]}</a></div>')
             f.write("""</section><aside id="right_block" style="margin-left: 100px;"></aside></div>""")
-            f.write('<footer><div class="container"><p>Vitalii Koshura © 2025</p></div></footer></body></html>')
+            f.write('<footer><div class="container"><p>Vitalii Koshura © 2026</p></div></footer></body></html>')
             previous_post = post
 
 last_blog_posts = blog_posts[-2:]
