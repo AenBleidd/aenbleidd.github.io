@@ -185,11 +185,10 @@ for post in blog_posts:
         f.write("""<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
 <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-</head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB9QYE55Z3"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-RB9QYE55Z3');</script>
-<body>""")
+</head><body>""")
         f.write(f'<header><div class="container"><h1>Vitalii Koshura: Maintaining BOINC / {post["title"]}</h1></div></header>')
         f.write("""<div class="container"><aside id="menu"><ul id="menu_items"><li><a href = 'index.html'>Home</a></li><li><a href = 'blog.html'>Blog</a></li><li><a href = 'tutorials.html'>Tutorials</a></li></ul></aside><section id="main_content"><div id="blog_post_single">""")
         f.write(html_content)
@@ -197,9 +196,7 @@ for post in blog_posts:
         if post['type'] == 'blog':
             if previous_post and post['type'] == 'blog':
                 f.write(f'<div id="previous_post_link"><a href="{previous_post["file"]}.html">Previous Post: {previous_post["title"]}</a></div>')
-            f.write("""</section><aside id="right_block" style="margin-left: 100px;"></aside></div>
-    <script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
-    <script type="text/javascript">try {var pageTracker = _gat._getTracker("UA-64184707-1");pageTracker._trackPageview();} catch(err) {}</script><script src="../javascripts/main.js" type="module"></script>""")
+            f.write("""</section><aside id="right_block" style="margin-left: 100px;"></aside></div>""")
             f.write('<footer><div class="container"><p>Vitalii Koshura © 2025</p></div></footer></body></html>')
             previous_post = post
 
