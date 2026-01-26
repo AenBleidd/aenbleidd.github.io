@@ -209,7 +209,7 @@ with open('index.html', 'r', encoding='utf-8') as f:
     with open(f"md/{last_blog_posts[1]['file']}.md", 'r', encoding='utf-8') as f:
         md_content = f.read()
     html_content = markdown.markdown(md_content)
-    content = re.sub(r'<!--BLOG REPLACE START-->.*<!--BLOG REPLACE END-->', f'<!--BLOG REPLACE START--><div id="blog_content"><h1>{last_blog_posts[1]["title"]}</h1>{html_content}</div><div id="previous_post_link"><a href="{last_blog_posts[0]["file"]}.html">Previous Post: {last_blog_posts[0]["title"]}</a></div><!--BLOG REPLACE END-->', content, flags=re.DOTALL)
+    content = re.sub(r'<!--BLOG REPLACE START-->.*<!--BLOG REPLACE END-->', f'<!--BLOG REPLACE START--><div id="blog_content"><h2>{last_blog_posts[1]["title"]}</h2>{html_content}</div><div id="previous_post_link"><a href="{last_blog_posts[0]["file"]}.html">Previous Post: {last_blog_posts[0]["title"]}</a></div><!--BLOG REPLACE END-->', content, flags=re.DOTALL)
     with open('index.html', 'w', encoding='utf-8') as f:
       f.write(content)
 
