@@ -157,6 +157,15 @@ blog_posts = [
         'type': 'blog',
         'date': '2025.10.17',
         'image': 'images/2025.10.17.png'
+    },
+    {
+        'file': '2026.03.26',
+        'title': 'BOINC client release workflow status',
+        'description': 'Read the information about the current status of BOINC client and manager release workflow.',
+        'keywords': 'BOINC, development, Vitalii Koshura, BOINC client and manager release workflow',
+        'type': 'blog',
+        'date': '2026.03.26',
+        'image': 'images/2026.03.26.jpg'
     }
 ]
 
